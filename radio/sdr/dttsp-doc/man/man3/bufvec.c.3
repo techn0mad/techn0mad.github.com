@@ -1,0 +1,152 @@
+.TH "bufvec.c" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bufvec.c \- Creation, deletion, management for vectors and buffers. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <bufvec.h>\fP
+.br
+\fC#include <fftw3.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBsafealloc\fP (int count, int nbytes, char *tag)"
+.br
+.ti -1c
+.RI "void \fBsafefree\fP (char *p)"
+.br
+.ti -1c
+.RI "size_t \fBsafememcurrcount\fP (void)"
+.br
+.ti -1c
+.RI "void \fBsafememreset\fP (void)"
+.br
+.ti -1c
+.RI "\fBREAL\fP * \fBnewvec_REAL\fP (int size, char *tag)"
+.br
+.ti -1c
+.RI "void \fBdelvec_REAL\fP (\fBREAL\fP *vec)"
+.br
+.ti -1c
+.RI "\fBIMAG\fP * \fBnewvec_IMAG\fP (int size, char *tag)"
+.br
+.ti -1c
+.RI "void \fBdelvec_IMAG\fP (\fBIMAG\fP *vec)"
+.br
+.ti -1c
+.RI "\fBCOMPLEX\fP * \fBnewvec_COMPLEX\fP (int size, char *tag)"
+.br
+.ti -1c
+.RI "void \fBdelvec_COMPLEX\fP (\fBCOMPLEX\fP *vec)"
+.br
+.ti -1c
+.RI "\fBCOMPLEX\fP * \fBnewvec_COMPLEX_fftw\fP (int size, char *tag)"
+.br
+.ti -1c
+.RI "void \fBdelvec_COMPLEX_fftw\fP (\fBCOMPLEX\fP *vec)"
+.br
+.ti -1c
+.RI "\fBCXB\fP \fBnewCXB\fP (int size, \fBCOMPLEX\fP *base, char *tag)"
+.br
+.ti -1c
+.RI "void \fBdelCXB\fP (\fBCXB\fP p)"
+.br
+.ti -1c
+.RI "\fBRLB\fP \fBnewRLB\fP (int size, \fBREAL\fP *base, char *tag)"
+.br
+.ti -1c
+.RI "void \fBdelRLB\fP (\fBRLB\fP p)"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBnormalize_vec_REAL\fP (\fBREAL\fP *v, int n)"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBnormalize_vec_COMPLEX\fP (\fBCOMPLEX\fP *z, int n)"
+.br
+.ti -1c
+.RI "void \fBdump_REAL\fP (FILE *fp, char *head, \fBREAL\fP *ptr, int beg, int fin)"
+.br
+.ti -1c
+.RI "void \fBdump_IMAG\fP (FILE *fp, char *head, \fBIMAG\fP *ptr, int beg, int fin)"
+.br
+.ti -1c
+.RI "void \fBdump_CX\fP (FILE *fp, char *head, \fBCOMPLEX\fP *ptr, int beg, int fin)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "PRIVATE size_t \fB_safemem_currcount\fP = 0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Creation, deletion, management for vectors and buffers. 
+
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBbufvec.c\fP.
+.SH "Function Documentation"
+.PP 
+.SS "char* safealloc (int count, int nbytes, char * tag)"
+.PP
+Wrapper around \fCcalloc()\fP 
+.PP
+Definition at line 48 of file bufvec.c.
+.PP
+References _safemem_currcount.
+.PP
+Referenced by create_globals(), new_blms(), new_lmsr(), newAMD(), newCorrectIQ(), newCWToneGen(), newCXB(), newDCBlocker(), newDttSPAgc(), newFIR_COMPLEX(), newFIR_REAL(), newFMD(), newRLB(), newvec_COMPLEX(), newvec_IMAG(), newvec_REAL(), and setup_local_audio().
+.SS "void safefree (char * p)"
+.PP
+Wrapper around \fCfree()\fP 
+.PP
+Definition at line 67 of file bufvec.c.
+.PP
+Referenced by closeup(), del_blms(), del_lmsr(), delAMD(), delCorrectIQ(), delCWToneGen(), delCXB(), delDCBlocker(), delDttSPAgc(), delFIR_COMPLEX(), delFIR_REAL(), delFMD(), delRLB(), delvec_COMPLEX(), delvec_IMAG(), delvec_REAL(), destroy_globals(), and reset_for_buflen().
+.SS "size_t safememcurrcount (void)"
+.PP
+Get reference counters 
+.PP
+Definition at line 74 of file bufvec.c.
+.PP
+References _safemem_currcount.
+.SS "void safememreset (void)"
+.PP
+Reset reference counters 
+.PP
+Definition at line 80 of file bufvec.c.
+.PP
+References _safemem_currcount.
+.PP
+Referenced by reset_for_buflen(), and setup().
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

@@ -1,0 +1,62 @@
+.TH "am_demod.c" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+am_demod.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <am_demod.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "PRIVATE void \fBinit_pll\fP (\fBAMD\fP am, \fBREAL\fP samprate, \fBREAL\fP freq, \fBREAL\fP lofreq, \fBREAL\fP hifreq, \fBREAL\fP bandwidth)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBpll\fP (\fBAMD\fP am, \fBCOMPLEX\fP sig)"
+.br
+.ti -1c
+.RI "PRIVATE \fBREAL\fP \fBdem\fP (\fBAMD\fP am)"
+.br
+.ti -1c
+.RI "void \fBAMDemod\fP (\fBAMD\fP am)"
+.br
+.ti -1c
+.RI "\fBAMD\fP \fBnewAMD\fP (\fBREAL\fP samprate, \fBREAL\fP f_initial, \fBREAL\fP f_lobound, \fBREAL\fP f_hibound, \fBREAL\fP f_bandwid, int size, \fBCOMPLEX\fP *ivec, \fBCOMPLEX\fP *ovec, \fBAMMode\fP mode, char *tag)"
+.br
+.ti -1c
+.RI "void \fBdelAMD\fP (\fBAMD\fP am)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004,2005,2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBam_demod.c\fP.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

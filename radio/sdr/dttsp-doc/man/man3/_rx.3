@@ -1,0 +1,419 @@
+.TH "_rx" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_rx \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/sdrexport.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBCXB\fP \fBi\fP"
+.br
+.ti -1c
+.RI "   \fBCXB\fP \fBo\fP"
+.br
+.ti -1c
+.RI "} \fBbuf\fP"
+.br
+.ti -1c
+.RI "\fBIQ\fP \fBiqfix\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   double \fBfreq\fP"
+.br
+.ti -1c
+.RI "   double \fBphase\fP"
+.br
+.ti -1c
+.RI "   \fBOSC\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "} \fBosc\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBComplexFIR\fP \fBcoef\fP"
+.br
+.ti -1c
+.RI "   \fBFiltOvSv\fP \fBovsv\fP"
+.br
+.ti -1c
+.RI "   \fBCOMPLEX\fP * \fBsave\fP"
+.br
+.ti -1c
+.RI "} \fBfilt\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBthresh\fP"
+.br
+.ti -1c
+.RI "   \fBNB\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "} \fBnb\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBthresh\fP"
+.br
+.ti -1c
+.RI "   \fBNB\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "} \fBnb_sdrom\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBLMSR\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "} \fBanr\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBLMSR\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "} \fBanf\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBDTTSPAGC\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "} \fBdttspagc\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBAMD\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "} \fBam\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBFMD\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "} \fBfm\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "   \fBSpotToneGen\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "} \fBspot\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBthresh\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBpower\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBrunning\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBset\fP"
+.br
+.ti -1c
+.RI "   int \fBnum\fP"
+.br
+.ti -1c
+.RI "} \fBsquelch\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "   \fBWSCompander\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "} \fBcpd\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBEQ\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "} \fBgrapheq\fP"
+.br
+.ti -1c
+.RI "\fBSDRMODE\fP \fBmode\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBnorm\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBgain\fP"
+.br
+.ti -1c
+.RI "\fBCOMPLEX\fP \fBazim\fP"
+.br
+.ti -1c
+.RI "long \fBtick\fP"
+.br
+.ti -1c
+.RI "\fBBLMS\fP \fBgen\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Receiver control 
+.PP
+Definition at line 116 of file sdrexport.h.
+.SH "Field Documentation"
+.PP 
+.SS "\fBCXB\fP \fB_rx::i\fP"
+.PP
+Input buffer 
+.PP
+Definition at line 121 of file sdrexport.h.
+.PP
+Referenced by setup_rx().
+.SS "\fBCXB\fP \fB_rx::o\fP"
+.PP
+Output buffer 
+.PP
+Definition at line 121 of file sdrexport.h.
+.PP
+Referenced by setup_rx().
+.SS "struct { ... }   \fB_rx::buf\fP"
+.PP
+Input/output buffers 
+.PP
+Referenced by setup_rx().
+.SS "double \fB_rx::freq\fP"
+.PP
+Frequency 
+.PP
+Definition at line 130 of file sdrexport.h.
+.PP
+Referenced by setup_rx().
+.SS "double \fB_rx::phase\fP"
+.PP
+Phase 
+.PP
+Definition at line 130 of file sdrexport.h.
+.PP
+Referenced by setup_rx().
+.SS "\fBOSC\fP \fB_rx::gen\fP"
+.PP
+Generator 
+.PP
+Definition at line 132 of file sdrexport.h.
+.PP
+Referenced by destroy_workspace(), do_rx_AM(), do_rx_meter(), do_rx_post(), do_rx_pre(), do_rx_SBCW(), setANFvals(), setBlkANFval(), setBlkNRval(), setCompand(), setfixedAGC(), setGrphRXEQ10(), setGrphRXEQ3(), setMode(), setNBvals(), setNRvals(), setOsc(), setRXAGC(), setRXAGCAttack(), setRXAGCCompression(), setRXAGCDecay(), setRXAGCFix(), setRXAGCHang(), setRXAGCHangThreshold(), setRXAGCLimit(), setRXAGCSlope(), setRXAGCTop(), setSDROMvals(), setSpotTone(), setSpotToneVals(), and setup_rx().
+.SS "struct { ... }   \fB_rx::osc\fP"
+.PP
+Frequency setting 
+.PP
+Referenced by setOsc(), and setup_rx().
+.SS "\fBComplexFIR\fP \fB_rx::coef\fP"
+.PP
+Coefficients 
+.PP
+Definition at line 138 of file sdrexport.h.
+.PP
+Referenced by setRXFilter(), and setup_rx().
+.SS "struct { ... }   \fB_rx::filt\fP"
+.PP
+Filter configuration 
+.PP
+Referenced by setRXFilter(), and setup_rx().
+.SS "\fBREAL\fP \fB_rx::thresh\fP"
+.PP
+Threshold 
+.PP
+Definition at line 146 of file sdrexport.h.
+.PP
+Referenced by setNBvals(), setSDROMvals(), setSquelch(), setup_rx(), and should_do_rx_squelch().
+.SS "\fBNB\fP \fB_rx::gen\fP"
+.PP
+State 
+.PP
+Definition at line 147 of file sdrexport.h.
+.SS "\fBBOOLEAN\fP \fB_rx::flag\fP"
+.PP
+Enabled 
+.PP
+Definition at line 148 of file sdrexport.h.
+.PP
+Referenced by do_rx_AM(), do_rx_post(), do_rx_pre(), do_rx_SBCW(), do_rx_spectrum(), setANF(), setBIN(), setBlkANF(), setBlkNR(), setCompandSt(), setGrphRXEQcmd(), setNB(), setNR(), setRXAGC(), setSDROM(), setSpotTone(), setSquelchSt(), and setup_rx().
+.SS "struct { ... }   \fB_rx::nb\fP"
+.PP
+Noise blanker configuration 
+.PP
+Referenced by setNB(), setNBvals(), and setup_rx().
+.SS "struct { ... }   \fB_rx::nb_sdrom\fP"
+.PP
+Noise blanker 2 configuration 
+.PP
+Referenced by setSDROM(), setSDROMvals(), and setup_rx().
+.SS "\fBLMSR\fP \fB_rx::gen\fP"
+.PP
+Filter 
+.PP
+Definition at line 162 of file sdrexport.h.
+.SS "struct { ... }   \fB_rx::anr\fP"
+.PP
+Noise reduction/filtering configuration 
+.PP
+Referenced by do_rx_SBCW(), setNR(), setNRvals(), and setup_rx().
+.SS "struct { ... }   \fB_rx::anf\fP"
+.PP
+Noise reduction/filtering configuration 
+.PP
+Referenced by do_rx_SBCW(), setANF(), setANFvals(), and setup_rx().
+.SS "\fBDTTSPAGC\fP \fB_rx::gen\fP"
+.PP
+AGC configuration 
+.PP
+Definition at line 175 of file sdrexport.h.
+.SS "struct { ... }   \fB_rx::dttspagc\fP"
+.PP
+AGC settings 
+.PP
+Referenced by setfixedAGC(), setRXAGC(), setRXAGCAttack(), setRXAGCCompression(), setRXAGCDecay(), setRXAGCFix(), setRXAGCHang(), setRXAGCHangThreshold(), setRXAGCLimit(), setRXAGCSlope(), setRXAGCTop(), and setup_rx().
+.SS "\fBAMD\fP \fB_rx::gen\fP"
+.PP
+Demodulator 
+.PP
+Definition at line 182 of file sdrexport.h.
+.SS "struct { ... }   \fB_rx::am\fP"
+.PP
+AM demodulator configuration 
+.PP
+Referenced by setMode(), and setup_rx().
+.SS "\fBFMD\fP \fB_rx::gen\fP"
+.PP
+Demodulator 
+.PP
+Definition at line 188 of file sdrexport.h.
+.SS "struct { ... }   \fB_rx::fm\fP"
+.PP
+FM demodulator configuration 
+.PP
+Referenced by setup_rx().
+.SS "\fBSpotToneGen\fP \fB_rx::gen\fP"
+.PP
+Generator 
+.PP
+Definition at line 195 of file sdrexport.h.
+.SS "struct { ... }   \fB_rx::spot\fP"
+.PP
+Spot Tone configuration 
+.PP
+Referenced by do_rx_post(), setSpotTone(), and setup_rx().
+.SS "\fBREAL\fP \fB_rx::power\fP"
+.PP
+Power 
+.PP
+Definition at line 201 of file sdrexport.h.
+.PP
+Referenced by setup_rx(), and should_do_rx_squelch().
+.SS "struct { ... }   \fB_rx::squelch\fP"
+.PP
+Squelch configuration 
+.PP
+Referenced by do_rx_squelch(), no_rx_squelch(), setSquelch(), setSquelchSt(), setup_rx(), and should_do_rx_squelch().
+.SS "\fBWSCompander\fP \fB_rx::gen\fP"
+.PP
+Configuration 
+.PP
+Definition at line 213 of file sdrexport.h.
+.SS "struct { ... }   \fB_rx::cpd\fP"
+.PP
+Compandor configuration 
+.PP
+Referenced by setCompandSt(), and setup_rx().
+.SS "\fBEQ\fP \fB_rx::gen\fP"
+.PP
+Equalizer 
+.PP
+Definition at line 219 of file sdrexport.h.
+.SS "struct { ... }   \fB_rx::grapheq\fP"
+.PP
+Graphic equalizer configuration 
+.PP
+Referenced by setGrphRXEQcmd(), and setup_rx().
+.SS "\fBSDRMODE\fP \fB_rx::mode\fP"
+.PP
+Modulation type 
+.PP
+Definition at line 223 of file sdrexport.h.
+.PP
+Referenced by setMode(), and setup_rx().
+.SS "\fBCOMPLEX\fP \fB_rx::azim\fP"
+.PP
+Gain setting 
+.PP
+Definition at line 233 of file sdrexport.h.
+.PP
+Referenced by setRXPan(), and setup_rx().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

@@ -1,0 +1,383 @@
+.TH "_tx" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_tx \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/sdrexport.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBCXB\fP \fBi\fP"
+.br
+.ti -1c
+.RI "   \fBCXB\fP \fBo\fP"
+.br
+.ti -1c
+.RI "} \fBbuf\fP"
+.br
+.ti -1c
+.RI "\fBIQ\fP \fBiqfix\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "   \fBDCBlocker\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "} \fBdcb\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   double \fBfreq\fP"
+.br
+.ti -1c
+.RI "   double \fBphase\fP"
+.br
+.ti -1c
+.RI "   \fBOSC\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "} \fBosc\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBComplexFIR\fP \fBcoef\fP"
+.br
+.ti -1c
+.RI "   \fBFiltOvSv\fP \fBovsv\fP"
+.br
+.ti -1c
+.RI "   \fBCOMPLEX\fP * \fBsave\fP"
+.br
+.ti -1c
+.RI "} \fBfilt\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBcarrier_level\fP"
+.br
+.ti -1c
+.RI "} \fBam\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBcvtmod2freq\fP"
+.br
+.ti -1c
+.RI "} \fBfm\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBthresh\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBpower\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBrunning\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBset\fP"
+.br
+.ti -1c
+.RI "   int \fBnum\fP"
+.br
+.ti -1c
+.RI "} \fBsquelch\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBDTTSPAGC\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "} \fBleveler\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBDTTSPAGC\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "} \fBalc\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBEQ\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "} \fBgrapheq\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBSpeechProc\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "} \fBspr\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "   \fBWSCompander\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "} \fBcpd\fP"
+.br
+.ti -1c
+.RI "\fBSDRMODE\fP \fBmode\fP"
+.br
+.ti -1c
+.RI "long \fBtick\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBnorm\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBalc\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBcomp\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBcpdr\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBeqtap\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBlvlr\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBmic\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBpwr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Transmitter control 
+.PP
+Definition at line 240 of file sdrexport.h.
+.SH "Field Documentation"
+.PP 
+.SS "\fBCXB\fP \fB_tx::i\fP"
+.PP
+Input buffer 
+.PP
+Definition at line 245 of file sdrexport.h.
+.PP
+Referenced by CXBnorm(), CXBnormsqr(), CXBpeak(), CXBpeakpwr(), CXBscl(), destroy_workspace(), do_rx_meter(), do_rx_NIL(), do_rx_post(), do_rx_pre(), do_rx_SBCW(), do_rx_spectrum(), do_rx_squelch(), do_tx_AM(), do_tx_FM(), do_tx_meter(), do_tx_NIL(), do_tx_post(), do_tx_pre(), do_tx_SBCW(), do_tx_spectrum(), do_tx_squelch(), no_rx_squelch(), no_tx_squelch(), process_samples(), reset_meters(), setup_tx(), should_do_rx_squelch(), and should_do_tx_squelch().
+.SS "\fBCXB\fP \fB_tx::o\fP"
+.PP
+Output buffer 
+.PP
+Definition at line 245 of file sdrexport.h.
+.PP
+Referenced by destroy_workspace(), do_tx_meter(), do_tx_post(), and setup_tx().
+.SS "struct { ... }   \fB_tx::buf\fP"
+.PP
+Input/output buffers 
+.PP
+Referenced by destroy_workspace(), do_rx_meter(), do_rx_NIL(), do_rx_post(), do_rx_pre(), do_rx_SBCW(), do_rx_spectrum(), do_rx_squelch(), do_tx_AM(), do_tx_FM(), do_tx_meter(), do_tx_NIL(), do_tx_post(), do_tx_pre(), do_tx_SBCW(), do_tx_spectrum(), do_tx_squelch(), no_rx_squelch(), no_tx_squelch(), process_samples(), setup_rx(), setup_tx(), should_do_rx_squelch(), and should_do_tx_squelch().
+.SS "\fBBOOLEAN\fP \fB_tx::flag\fP"
+.PP
+Enabled 
+.PP
+Definition at line 254 of file sdrexport.h.
+.PP
+Referenced by do_tx_AM(), do_tx_FM(), do_tx_pre(), do_tx_SBCW(), setCompandSt(), setDCBlockSt(), setGrphTXEQcmd(), setTXAGCFF(), setTXCompandSt(), setTXLevelerSt(), setTXSpeechCompression(), setTXSquelchSt(), setup_tx(), and should_do_tx_squelch().
+.SS "\fBDCBlocker\fP \fB_tx::gen\fP"
+.PP
+Configuration 
+.PP
+Definition at line 255 of file sdrexport.h.
+.PP
+Referenced by destroy_workspace(), do_tx_AM(), do_tx_FM(), do_tx_meter(), do_tx_post(), do_tx_pre(), do_tx_SBCW(), setCompand(), setDCBlock(), setfixedAGC(), setGrphTXEQ10(), setGrphTXEQ3(), setNotch160(), setOsc(), setTXAGCFFCompression(), setTXAGCLimit(), setTXALCAttack(), setTXALCBot(), setTXALCDecay(), setTXALCHang(), setTXCompand(), setTXLevelerAttack(), setTXLevelerDecay(), setTXLevelerHang(), setTXLevelerTop(), setTXSpeechCompressionGain(), and setup_tx().
+.SS "struct { ... }   \fB_tx::dcb\fP"
+.PP
+DC Blocking 
+.PP
+Referenced by destroy_workspace(), do_tx_pre(), setDCBlock(), setDCBlockSt(), and setup_tx().
+.SS "double \fB_tx::freq\fP"
+.PP
+Frequency 
+.PP
+Definition at line 261 of file sdrexport.h.
+.PP
+Referenced by setup_tx().
+.SS "double \fB_tx::phase\fP"
+.PP
+Phase 
+.PP
+Definition at line 261 of file sdrexport.h.
+.PP
+Referenced by do_tx_FM(), and setup_tx().
+.SS "\fBOSC\fP \fB_tx::gen\fP"
+.PP
+Generator 
+.PP
+Definition at line 263 of file sdrexport.h.
+.SS "struct { ... }   \fB_tx::osc\fP"
+.PP
+Frequency setting 
+.PP
+Referenced by destroy_workspace(), do_rx_pre(), do_tx_FM(), do_tx_post(), setOsc(), and setup_tx().
+.SS "\fBComplexFIR\fP \fB_tx::coef\fP"
+.PP
+Coefficients 
+.PP
+Definition at line 269 of file sdrexport.h.
+.PP
+Referenced by destroy_workspace(), setTXFilter(), and setup_tx().
+.SS "struct { ... }   \fB_tx::filt\fP"
+.PP
+Filter configuration 
+.PP
+Referenced by destroy_workspace(), do_rx_pre(), do_tx_post(), setTXFilter(), setup_rx(), and setup_tx().
+.SS "\fBREAL\fP \fB_tx::carrier_level\fP"
+.PP
+Carrier level 
+.PP
+Definition at line 277 of file sdrexport.h.
+.PP
+Referenced by do_tx_AM(), setTXCarrierLevel(), and setup_tx().
+.SS "struct { ... }   \fB_tx::am\fP"
+.PP
+AM Carrier level setting 
+.PP
+Referenced by destroy_workspace(), do_rx_AM(), do_tx_AM(), setTXCarrierLevel(), and setup_tx().
+.SS "\fBREAL\fP \fB_tx::cvtmod2freq\fP"
+.PP
+Deviation setting 
+.PP
+Definition at line 283 of file sdrexport.h.
+.PP
+Referenced by do_tx_FM(), and setup_tx().
+.SS "struct { ... }   \fB_tx::fm\fP"
+.PP
+FM Deviation setting 
+.PP
+Referenced by destroy_workspace(), do_rx_FM(), do_tx_FM(), and setup_tx().
+.SS "\fBREAL\fP \fB_tx::thresh\fP"
+.PP
+Threshold 
+.PP
+Definition at line 289 of file sdrexport.h.
+.PP
+Referenced by setTXSquelch(), setup_tx(), and should_do_tx_squelch().
+.SS "\fBREAL\fP \fB_tx::power\fP"
+.PP
+Power 
+.PP
+Definition at line 289 of file sdrexport.h.
+.PP
+Referenced by setup_tx(), and should_do_tx_squelch().
+.SS "struct { ... }   \fB_tx::squelch\fP"
+.PP
+Squelch configuration 
+.PP
+Referenced by do_rx_post(), do_rx_squelch(), do_tx_pre(), do_tx_squelch(), no_rx_squelch(), no_tx_squelch(), setTXSquelch(), setTXSquelchSt(), setup_rx(), setup_tx(), should_do_rx_squelch(), and should_do_tx_squelch().
+.SS "\fBDTTSPAGC\fP \fB_tx::gen\fP"
+.PP
+ALC configuration 
+.PP
+Definition at line 300 of file sdrexport.h.
+.SS "struct { ... }   \fB_tx::leveler\fP"
+.PP
+ALC settings 
+.PP
+Referenced by destroy_workspace(), do_tx_meter(), do_tx_pre(), setfixedAGC(), setTXLevelerAttack(), setTXLevelerDecay(), setTXLevelerHang(), setTXLevelerSt(), setTXLevelerTop(), and setup_tx().
+.SS "struct { ... }   \fB_tx::alc\fP"
+.PP
+ALC settings 
+.PP
+Referenced by destroy_workspace(), do_tx_AM(), do_tx_FM(), do_tx_meter(), do_tx_SBCW(), setTXAGCLimit(), setTXALCAttack(), setTXALCBot(), setTXALCDecay(), setTXALCHang(), and setup_tx().
+.SS "\fBEQ\fP \fB_tx::gen\fP"
+.PP
+Equalizer 
+.PP
+Definition at line 307 of file sdrexport.h.
+.SS "struct { ... }   \fB_tx::grapheq\fP"
+.PP
+Graphic equalizer configuration 
+.PP
+Referenced by do_rx_post(), do_tx_pre(), setGrphTXEQ10(), setGrphTXEQ3(), setGrphTXEQcmd(), setNotch160(), and setup_tx().
+.SS "\fBSpeechProc\fP \fB_tx::gen\fP"
+.PP
+Processor 
+.PP
+Definition at line 314 of file sdrexport.h.
+.SS "struct { ... }   \fB_tx::spr\fP"
+.PP
+Speech processor configuration 
+.PP
+Referenced by destroy_workspace(), do_tx_pre(), setTXAGCFF(), setTXAGCFFCompression(), setTXSpeechCompression(), setTXSpeechCompressionGain(), and setup_tx().
+.SS "\fBWSCompander\fP \fB_tx::gen\fP"
+.PP
+Compandor 
+.PP
+Definition at line 322 of file sdrexport.h.
+.SS "struct { ... }   \fB_tx::cpd\fP"
+.PP
+Compandor configuration 
+.PP
+Referenced by destroy_workspace(), do_rx_pre(), do_tx_pre(), setCompand(), setCompandSt(), setTXCompand(), setTXCompandSt(), and setup_tx().
+.SS "\fBSDRMODE\fP \fB_tx::mode\fP"
+.PP
+Modulation type 
+.PP
+Definition at line 336 of file sdrexport.h.
+.PP
+Referenced by do_rx(), do_rx_pre(), do_tx(), do_tx_pre(), do_tx_SBCW(), setMode(), and setup_tx().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

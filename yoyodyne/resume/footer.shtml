@@ -1,0 +1,27 @@
+<!--#config timefmt="%B %d, %Y %H:%M:%S"-->
+
+
+<table width="100%" cellpadding=0>
+<colgroup span=3 width="33%">
+</colgroup>
+
+<tr>
+<td align=left>Back to <a href="../index.shtml">Larry's Consulting Page</a>
+<td align=center>Up to <a href="../../sitemap.html">Site Map</a>
+<td align=right>Updated: <!--#echo var="LAST_MODIFIED"--> 
+
+
+<tr>
+<td align=left>
+&copy; 2001 <A href="mailto:larry@gadallah.com">Larry Gadallah</A>, 
+<a href="http://www.gadallah.com/~larry/yoyodyne.html">796001 Alberta Limited</a>
+
+<td align=center>&nbsp;
+
+<td align=right>
+<a href="http://validator.w3.org/check/referer">
+<img border="0" src="http://www.w3.org/Icons/valid-html40" alt="Valid HTML 4.0!" height="31" width="88">
+</a>
+
+</table>
+

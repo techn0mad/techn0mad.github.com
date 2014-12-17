@@ -1,0 +1,122 @@
+.TH "lmadf.h" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lmadf.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fromsys.h>\fP
+.br
+\fC#include <banal.h>\fP
+.br
+\fC#include <datatypes.h>\fP
+.br
+\fC#include <bufvec.h>\fP
+.br
+\fC#include <cxops.h>\fP
+.br
+\fC#include <fftw3.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_BlockLMS\fP"
+.br
+.ti -1c
+.RI "struct \fB_LMSR\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBLMADF_INTERFERENCE\fP   0"
+.br
+.ti -1c
+.RI "#define \fBLMADF_NOISE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBLMADF_NOSIG\fP   (-1)"
+.br
+.ti -1c
+.RI "#define \fBLMADF_NOLINE\fP   (-2)"
+.br
+.ti -1c
+.RI "#define \fBLMADF_NOFILT\fP   (-3)"
+.br
+.ti -1c
+.RI "#define \fBREALLMS\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fB_LMSR\fP * \fBLMSR\fP"
+.br
+.ti -1c
+.RI "typedef \fB_LMSR\fP \fB_lmsstate\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLMSR\fP \fBnew_lmsr\fP (\fBCXB\fP signal, int delay, \fBREAL\fP adaptation_rate, \fBREAL\fP leakage, int adaptive_filter_size, int filter_type)"
+.br
+.ti -1c
+.RI "void \fBdel_lmsr\fP (\fBLMSR\fP lms)"
+.br
+.ti -1c
+.RI "void \fBlmsr_adapt\fP (\fBLMSR\fP lms)"
+.br
+.ti -1c
+.RI "\fBBLMS\fP \fBnew_blms\fP (\fBCXB\fP signal, \fBREAL\fP adaptation_rate, \fBREAL\fP leak_rate, int filter_type, int pbits)"
+.br
+.ti -1c
+.RI "void \fBblms_adapt\fP (\fBBLMS\fP blms)"
+.br
+.ti -1c
+.RI "void \fBdel_blms\fP (\fBBLMS\fP blms)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBlmadf.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB_LMSR\fP  \fB_lmsstate\fP"
+.PP
+Real LMS 
+.SS "typedef struct \fB_LMSR\fP    * \fBLMSR\fP"
+.PP
+Real LMS 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

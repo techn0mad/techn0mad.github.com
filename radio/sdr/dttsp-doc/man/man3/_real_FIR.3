@@ -1,0 +1,82 @@
+.TH "_real_FIR" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_real_FIR \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/filter.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBREAL\fP * \fBcoef\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "\fBFIR_response_type\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBBOOLEAN\fP \fBcplx\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBlo\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBhi\fP"
+.br
+.ti -1c
+.RI "} \fBfreq\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Real FIR filter structure 
+.PP
+Definition at line 72 of file filter.h.
+.SH "Field Documentation"
+.PP 
+.SS "\fBREAL\fP* \fB_real_FIR::coef\fP"
+.PP
+Array of coefficients 
+.PP
+Definition at line 74 of file filter.h.
+.SS "int \fB_real_FIR::size\fP"
+.PP
+Array size 
+.PP
+Definition at line 75 of file filter.h.
+.SS "\fBFIR_response_type\fP \fB_real_FIR::type\fP"
+.PP
+Filter type 
+.PP
+Definition at line 76 of file filter.h.
+.SS "\fBBOOLEAN\fP \fB_real_FIR::cplx\fP"
+.PP
+Complex flag 
+.PP
+Definition at line 77 of file filter.h.
+.SS "\fBREAL\fP \fB_real_FIR::lo\fP"
+.PP
+Lower frequency limit 
+.PP
+Definition at line 82 of file filter.h.
+.SS "\fBREAL\fP \fB_real_FIR::hi\fP"
+.PP
+Upper frequency limit 
+.PP
+Definition at line 82 of file filter.h.
+.SS "struct { ... }   \fB_real_FIR::freq\fP"
+.PP
+Frequencies 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

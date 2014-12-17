@@ -1,0 +1,409 @@
+.TH "_top" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_top \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/sdrexport.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBpid\fP"
+.br
+.ti -1c
+.RI "uid_t \fBuid\fP"
+.br
+.ti -1c
+.RI "timeval \fBstart_tv\fP"
+.br
+.ti -1c
+.RI "\fBBOOLEAN\fP \fBrunning\fP"
+.br
+.ti -1c
+.RI "\fBBOOLEAN\fP \fBverbose\fP"
+.br
+.ti -1c
+.RI "\fBRUNMODE\fP \fBstate\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   struct {"
+.br
+.ti -1c
+.RI "      float * \fBl\fP"
+.br
+.ti -1c
+.RI "      float * \fBr\fP"
+.br
+.ti -1c
+.RI "   } \fBbuf\fP"
+.br
+.ti -1c
+.RI "   struct {"
+.br
+.ti -1c
+.RI "      unsigned int \fBframes\fP"
+.br
+.ti -1c
+.RI "      unsigned int \fBbytes\fP"
+.br
+.ti -1c
+.RI "   } \fBsize\fP"
+.br
+.ti -1c
+.RI "} \fBhold\fP"
+.br
+.ti -1c
+.RI "int \fBoffs\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "} \fBthrd\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "} \fBsync\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "} \fBswch\fP"
+.br
+.ti -1c
+.RI "\fBBOOLEAN\fP \fBsusp\fP"
+.br
+.ti -1c
+.RI "char * \fBpath\fP"
+.br
+.ti -1c
+.RI "int \fBfd\fP"
+.br
+.ti -1c
+.RI "FILE * \fBfp\fP"
+.br
+.ti -1c
+.RI "char \fBbuff\fP [4096]"
+.br
+.ti -1c
+.RI "char * \fBpath\fP"
+.br
+.ti -1c
+.RI "FILE * \fBfp\fP"
+.br
+.ti -1c
+.RI "char \fBname\fP [256]"
+.br
+.ti -1c
+.RI "\fBBOOLEAN\fP \fBdoin\fP"
+.br
+.ti -1c
+.RI "size_t \fBsize\fP"
+.br
+.ti -1c
+.RI "size_t \fBrsiz\fP"
+.br
+.ti -1c
+.RI "jack_client_t * \fBclient\fP"
+.br
+.ti -1c
+.RI "int \fBi\fP"
+.br
+.ti -1c
+.RI "int \fBo\fP"
+.br
+.ti -1c
+.RI "int \fBxr\fP"
+.br
+.ti -1c
+.RI "char * \fBpath\fP"
+.br
+.ti -1c
+.RI "FILE * \fBfp\fP"
+.br
+.ti -1c
+.RI "jack_port_t * \fBl\fP"
+.br
+.ti -1c
+.RI "jack_port_t * \fBr\fP"
+.br
+.ti -1c
+.RI "\fBringb_float_t\fP * \fBl\fP"
+.br
+.ti -1c
+.RI "\fBringb_float_t\fP * \fBr\fP"
+.br
+.ti -1c
+.RI "pthread_t \fBid\fP"
+.br
+.ti -1c
+.RI "sem_t * \fBsem\fP"
+.br
+.ti -1c
+.RI "\fBSWCHSTATE\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "int \fBcnt\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBval\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBSWCHSTATE\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "   int \fBcnt\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBval\fP"
+.br
+.ti -1c
+.RI "} \fBcurr\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBincr\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   int \fBsize\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBincr\fP"
+.br
+.ti -1c
+.RI "} \fBfall\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   int \fBsize\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBincr\fP"
+.br
+.ti -1c
+.RI "} \fBrise\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   int \fBsize\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBincr\fP"
+.br
+.ti -1c
+.RI "} \fBstdy\fP"
+.br
+.ti -1c
+.RI "\fBTRXMODE\fP \fBnext\fP"
+.br
+.ti -1c
+.RI "\fBRUNMODE\fP \fBlast\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Process control 
+.PP
+Definition at line 354 of file sdrexport.h.
+.SH "Field Documentation"
+.PP 
+.SS "int \fB_top::pid\fP"
+.PP
+Process ID 
+.PP
+Definition at line 356 of file sdrexport.h.
+.PP
+Referenced by make_sem(), setup(), and setup_system_audio().
+.SS "uid_t \fB_top::uid\fP"
+.PP
+User ID 
+.PP
+Definition at line 357 of file sdrexport.h.
+.PP
+Referenced by setup().
+.SS "struct timeval \fB_top::start_tv\fP"
+.PP
+Start time 
+.PP
+Definition at line 359 of file sdrexport.h.
+.PP
+Referenced by do_update(), replay_updates(), and setup().
+.SS "\fBBOOLEAN\fP \fB_top::running\fP"
+.PP
+Running flag 
+.PP
+Definition at line 361 of file sdrexport.h.
+.PP
+Referenced by meter_thread(), monitor_thread(), process_samples_thread(), process_updates_thread(), setFinished(), setup(), and spectrum_thread().
+.SS "\fBBOOLEAN\fP \fB_top::verbose\fP"
+.PP
+Verbose log flag 
+.PP
+Definition at line 361 of file sdrexport.h.
+.PP
+Referenced by closeup(), process_updates_thread(), replay_updates(), setup(), setup_from_commandline(), and setup_updates().
+.SS "\fBRUNMODE\fP \fB_top::state\fP"
+.PP
+Run state 
+.PP
+Definition at line 363 of file sdrexport.h.
+.PP
+Referenced by process_samples_thread(), setRunState(), setSWCH(), and setup().
+.SS "float* \fB_top::l\fP"
+.PP
+Left channel 
+.PP
+Definition at line 371 of file sdrexport.h.
+.SS "float * \fB_top::r\fP"
+.PP
+Right channel 
+.PP
+Definition at line 371 of file sdrexport.h.
+.SS "struct { ... }   \fB_top::buf\fP"
+.PP
+Buffer data pointers 
+.PP
+Referenced by closeup(), gethold(), process_samples_thread(), reset_for_buflen(), run_mute(), run_play(), run_swch(), setup_local_audio(), and setup_threading().
+.SS "struct { ... }   \fB_top::size\fP"
+.PP
+Size information 
+.PP
+Referenced by canhold(), gethold(), run_mute(), run_play(), run_swch(), setup_local_audio(), and setup_system_audio().
+.SS "struct { ... }   \fB_top::hold\fP"
+.PP
+Audio stream 
+.PP
+Referenced by canhold(), closeup(), gethold(), reset_for_buflen(), run_mute(), run_play(), run_swch(), and setup_local_audio().
+.SS "char* \fB_top::path\fP"
+.PP
+File path 
+.PP
+Definition at line 385 of file sdrexport.h.
+.PP
+Referenced by setup_updates().
+.SS "int \fB_top::fd\fP"
+.PP
+File descriptor 
+.PP
+Definition at line 386 of file sdrexport.h.
+.PP
+Referenced by setup_updates().
+.SS "FILE* \fB_top::fp\fP"
+.PP
+File handle 
+.PP
+Definition at line 387 of file sdrexport.h.
+.PP
+Referenced by closeup(), execute(), process_updates_thread(), and setup_updates().
+.SS "char* \fB_top::path\fP"
+.PP
+File path 
+.PP
+Definition at line 395 of file sdrexport.h.
+.SS "FILE* \fB_top::fp\fP"
+.PP
+File handle 
+.PP
+Definition at line 396 of file sdrexport.h.
+.SS "int \fB_top::offs\fP"
+.PP
+Offset to compensate for L/R ADC lags 
+.PP
+Definition at line 400 of file sdrexport.h.
+.PP
+Referenced by audio_callback(), setRingBufferOffset(), setup(), and setup_local_audio().
+.SS "char* \fB_top::path\fP"
+.PP
+File path 
+.PP
+Definition at line 421 of file sdrexport.h.
+.SS "FILE* \fB_top::fp\fP"
+.PP
+File handle 
+.PP
+Definition at line 423 of file sdrexport.h.
+.SS "pthread_t \fB_top::id\fP"
+.PP
+Thread ID 
+.PP
+Definition at line 454 of file sdrexport.h.
+.SS "struct { ... }   \fB_top::thrd\fP"
+.PP
+Multiprocessing 
+.PP
+Referenced by execute(), and setup_threading().
+.SS "sem_t* \fB_top::sem\fP"
+.PP
+Semaphore 
+.PP
+Definition at line 463 of file sdrexport.h.
+.SS "struct { ... }   \fB_top::sync\fP"
+.PP
+Synchronization 
+.PP
+Referenced by closeup(), do_update(), execute(), jack_xrun(), meter_thread(), monitor_thread(), process_samples_thread(), reqMeter(), reqRXMeter(), reqScope(), reqSpectrum(), reqTXMeter(), setMonDump(), setup_threading(), and spectrum_thread().
+.SS "\fBSWCHSTATE\fP \fB_top::type\fP"
+.PP
+Status 
+.PP
+Definition at line 497 of file sdrexport.h.
+.SS "struct { ... } ::@88  \fB_top::curr\fP"
+.PP
+Current 
+.SS "struct { ... } ::@89  \fB_top::fall\fP"
+.PP
+Transition 
+.SS "struct { ... } ::@89  \fB_top::rise\fP"
+.PP
+Transition 
+.SS "struct { ... } ::@89  \fB_top::stdy\fP"
+.PP
+Transition 
+.SS "\fBTRXMODE\fP \fB_top::next\fP"
+.PP
+Next mode 
+.PP
+Definition at line 512 of file sdrexport.h.
+.SS "\fBRUNMODE\fP \fB_top::last\fP"
+.PP
+Last mode 
+.PP
+Definition at line 517 of file sdrexport.h.
+.SS "struct { ... }   \fB_top::swch\fP"
+.PP
+Transceive switching 
+.PP
+Referenced by run_swch(), and setSWCH().
+.SS "\fBBOOLEAN\fP \fB_top::susp\fP"
+.PP
+Suspend flag 
+.PP
+Definition at line 521 of file sdrexport.h.
+.PP
+Referenced by audio_callback(), setNewBuflen(), and setup_threading().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

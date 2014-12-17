@@ -1,0 +1,214 @@
+.TH "defs.h" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+defs.h \- Various definitions. 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRINGMULT\fP   (4)"
+.br
+.ti -1c
+.RI "#define \fBDEFRATE\fP   (48000.0)"
+.br
+.ti -1c
+.RI "#define \fBDEFSIZE\fP   (1024)"
+.br
+.ti -1c
+.RI "#define \fBDEFMODE\fP   (SAM)"
+.br
+.ti -1c
+.RI "#define \fBDEFSPEC\fP   (4096)"
+.br
+.ti -1c
+.RI "#define \fBDEFCOMP\fP   (512)"
+.br
+.ti -1c
+.RI "#define \fBDEFOFFS\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBMAXRX\fP   (4)"
+.br
+.ti -1c
+.RI "#define \fBMAXPATHLEN\fP   (2048)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fB_sdrmode\fP \fBSDRMODE\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_trxmode\fP \fBTRXMODE\fP"
+.br
+.ti -1c
+.RI "typedef enum \fB_swchstate\fP \fBSWCHSTATE\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fB_sdrmode\fP { \fBLSB\fP, \fBUSB\fP, \fBDSB\fP, \fBCWL\fP, \fBCWU\fP, \fBFMN\fP, \fBAM\fP, \fBDIGU\fP, \fBSPEC\fP, \fBDIGL\fP, \fBSAM\fP, \fBDRM\fP }"
+.br
+.ti -1c
+.RI "enum \fB_trxmode\fP { \fBRX\fP, \fBTX\fP }"
+.br
+.ti -1c
+.RI "enum \fB_swchstate\fP { \fBSWCH_FALL\fP, \fBSWCH_STDY\fP, \fBSWCH_RISE\fP }"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Various definitions. 
+
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBdefs.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define DEFMODE   (SAM)"
+.PP
+Default modulation mode 
+.PP
+Definition at line 45 of file defs.h.
+.PP
+Referenced by setup_defaults().
+.SS "#define DEFRATE   (48000.0)"
+.PP
+Default sampling rate (samples/sec) 
+.PP
+Definition at line 42 of file defs.h.
+.PP
+Referenced by setup_defaults().
+.SS "#define MAXPATHLEN   (2048)"
+.PP
+Maximum pathname length in bytes 
+.PP
+Definition at line 54 of file defs.h.
+.PP
+Referenced by find_rcfile(), and make_sem().
+.SS "#define MAXRX   (4)"
+.PP
+Maximum simultaneous RXs 
+.PP
+Definition at line 50 of file defs.h.
+.PP
+Referenced by create_globals(), destroy_globals(), meter_thread(), reset_meters(), and setup_defaults().
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef enum \fB_sdrmode\fP  \fBSDRMODE\fP"
+.PP
+Modulation/demodulation mode 
+.SS "typedef enum \fB_swchstate\fP  \fBSWCHSTATE\fP"
+.PP
+Switching state 
+.SS "typedef enum \fB_trxmode\fP  \fBTRXMODE\fP"
+.PP
+Transmit/receive mode 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fB_sdrmode\fP"
+.PP
+Modulation/demodulation mode 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fILSB \fP\fP
+Lower sideband (0) 
+.TP
+\fB\fIUSB \fP\fP
+Upper sideband (1) 
+.TP
+\fB\fIDSB \fP\fP
+Double sideband (2) 
+.TP
+\fB\fICWL \fP\fP
+CW Lower sideband (3) 
+.TP
+\fB\fICWU \fP\fP
+CW Upper sideband (4) 
+.TP
+\fB\fIFMN \fP\fP
+Narrow FM (5) 
+.TP
+\fB\fIAM \fP\fP
+AM (6) 
+.TP
+\fB\fIDIGU \fP\fP
+Digital Upper sideband (7) 
+.TP
+\fB\fISPEC \fP\fP
+Spectrum (8) 
+.TP
+\fB\fIDIGL \fP\fP
+Digital Lower sideband (9) 
+.TP
+\fB\fISAM \fP\fP
+Synchronous AM (10) 
+.TP
+\fB\fIDRM \fP\fP
+Digital Radio Mondiale (11) 
+.PP
+Definition at line 58 of file defs.h.
+.SS "enum \fB_swchstate\fP"
+.PP
+Switching state 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fISWCH_FALL \fP\fP
+Falling edge 
+.TP
+\fB\fISWCH_STDY \fP\fP
+Steady state 
+.TP
+\fB\fISWCH_RISE \fP\fP
+Rising edge 
+.PP
+Definition at line 82 of file defs.h.
+.SS "enum \fB_trxmode\fP"
+.PP
+Transmit/receive mode 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIRX \fP\fP
+Receive 
+.TP
+\fB\fITX \fP\fP
+Transmit 
+.PP
+Definition at line 75 of file defs.h.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

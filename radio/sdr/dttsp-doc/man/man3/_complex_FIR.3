@@ -1,0 +1,84 @@
+.TH "_complex_FIR" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_complex_FIR \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/filter.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBCOMPLEX\fP * \fBcoef\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "\fBFIR_response_type\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBBOOLEAN\fP \fBcplx\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBlo\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBhi\fP"
+.br
+.ti -1c
+.RI "} \fBfreq\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Complex FIR filter structure 
+.PP
+Definition at line 88 of file filter.h.
+.SH "Field Documentation"
+.PP 
+.SS "\fBCOMPLEX\fP* \fB_complex_FIR::coef\fP"
+.PP
+Array of coefficients 
+.PP
+Definition at line 90 of file filter.h.
+.PP
+Referenced by setGrphRXEQ10(), setGrphRXEQ3(), setGrphTXEQ10(), setGrphTXEQ3(), setRXFilter(), and setTXFilter().
+.SS "int \fB_complex_FIR::size\fP"
+.PP
+Array size 
+.PP
+Definition at line 91 of file filter.h.
+.SS "\fBFIR_response_type\fP \fB_complex_FIR::type\fP"
+.PP
+Filter type 
+.PP
+Definition at line 92 of file filter.h.
+.SS "\fBBOOLEAN\fP \fB_complex_FIR::cplx\fP"
+.PP
+Complex flag 
+.PP
+Definition at line 93 of file filter.h.
+.SS "\fBREAL\fP \fB_complex_FIR::lo\fP"
+.PP
+Lower frequency limit 
+.PP
+Definition at line 98 of file filter.h.
+.SS "\fBREAL\fP \fB_complex_FIR::hi\fP"
+.PP
+Upper frequency limit 
+.PP
+Definition at line 98 of file filter.h.
+.SS "struct { ... }   \fB_complex_FIR::freq\fP"
+.PP
+Frequencies 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

@@ -1,0 +1,145 @@
+.TH "_LMSR" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_LMSR \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/lmadf.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBCXB\fP \fBsignal\fP"
+.br
+.ti -1c
+.RI "int \fBsignal_size\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP * \fBdelay_line\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP * \fBadaptive_filter\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBadaptation_rate\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBleakage\fP"
+.br
+.ti -1c
+.RI "int \fBadaptive_filter_size\fP"
+.br
+.ti -1c
+.RI "int \fBfilter_type\fP"
+.br
+.ti -1c
+.RI "int \fBdelay\fP"
+.br
+.ti -1c
+.RI "int \fBdelay_line_ptr\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "int \fBmask\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Real LMS 
+.PP
+Definition at line 79 of file lmadf.h.
+.SH "Field Documentation"
+.PP 
+.SS "\fBCXB\fP \fB_LMSR::signal\fP"
+.PP
+Signal Buffer 
+.PP
+Definition at line 81 of file lmadf.h.
+.PP
+Referenced by new_lmsr().
+.SS "int \fB_LMSR::signal_size\fP"
+.PP
+Number of samples in signal buffer 
+.PP
+Definition at line 82 of file lmadf.h.
+.PP
+Referenced by new_lmsr().
+.SS "\fBREAL\fP* \fB_LMSR::delay_line\fP"
+.PP
+Delay Line circular buffer for holding samples 
+.PP
+Definition at line 83 of file lmadf.h.
+.PP
+Referenced by del_lmsr(), and new_lmsr().
+.SS "\fBREAL\fP* \fB_LMSR::adaptive_filter\fP"
+.PP
+Filter coefficients 
+.PP
+Definition at line 84 of file lmadf.h.
+.PP
+Referenced by del_lmsr(), and new_lmsr().
+.SS "\fBREAL\fP \fB_LMSR::adaptation_rate\fP"
+.PP
+Adaptation rate for the LMS stochastic gradient 
+.PP
+Definition at line 85 of file lmadf.h.
+.PP
+Referenced by new_lmsr().
+.SS "\fBREAL\fP \fB_LMSR::leakage\fP"
+.PP
+Exponential decay constant for filter coefficients 
+.PP
+Definition at line 86 of file lmadf.h.
+.PP
+Referenced by new_lmsr().
+.SS "int \fB_LMSR::adaptive_filter_size\fP"
+.PP
+number taps in adaptive filter 
+.PP
+Definition at line 87 of file lmadf.h.
+.PP
+Referenced by new_lmsr().
+.SS "int \fB_LMSR::filter_type\fP"
+.PP
+Filter type 
+.PP
+Definition at line 88 of file lmadf.h.
+.PP
+Referenced by lmsr_adapt(), and new_lmsr().
+.SS "int \fB_LMSR::delay\fP"
+.PP
+Total delay between current sample and filter 
+.PP
+Definition at line 89 of file lmadf.h.
+.PP
+Referenced by new_lmsr().
+.SS "int \fB_LMSR::delay_line_ptr\fP"
+.PP
+Pointer for next sample into the delay line 
+.PP
+Definition at line 90 of file lmadf.h.
+.PP
+Referenced by new_lmsr().
+.SS "int \fB_LMSR::size\fP"
+.PP
+Delay line size 
+.PP
+Definition at line 91 of file lmadf.h.
+.PP
+Referenced by new_lmsr().
+.SS "int \fB_LMSR::mask\fP"
+.PP
+Mask for circular buffer 
+.PP
+Definition at line 92 of file lmadf.h.
+.PP
+Referenced by new_lmsr().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

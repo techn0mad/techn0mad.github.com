@@ -1,0 +1,133 @@
+.TH "fastrig.h" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+fastrig.h \- Fast trigonometry definitions. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fromsys.h>\fP
+.br
+\fC#include <banal.h>\fP
+.br
+\fC#include <splitfields.h>\fP
+.br
+\fC#include <datatypes.h>\fP
+.br
+\fC#include <bufvec.h>\fP
+.br
+
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSIN_TABLE_SIZE\fP   (4096)"
+.br
+.ti -1c
+.RI "#define \fBSIN_TABLE_SIZE_M1\fP   (4095)"
+.br
+.ti -1c
+.RI "#define \fBTRIG_SPEED\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBSIN\fP(x)   (\fBREAL\fP)sin((\fBREAL\fP)x)"
+.br
+.ti -1c
+.RI "#define \fBCOS\fP(x)   (\fBREAL\fP)cos((\fBREAL\fP)x)"
+.br
+.ti -1c
+.RI "#define \fBATAN2\fP(x, y)   (\fBREAL\fP)atan2((\fBREAL\fP)(x),(\fBREAL\fP)(y))"
+.br
+.ti -1c
+.RI "#define \fBPI\fP   M_PI"
+.br
+.ti -1c
+.RI "#define \fBTWOPI\fP   (2.0 * PI)"
+.br
+.ti -1c
+.RI "#define \fBONE_OVER_TWOPI\fP   (0.159154943091895)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Fast trigonometry definitions. 
+
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBfastrig.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define ATAN2(x, y)   (\fBREAL\fP)atan2((\fBREAL\fP)(x),(\fBREAL\fP)(y))"
+.PP
+Normal (slow) real arctangent function 
+.PP
+Definition at line 81 of file fastrig.h.
+.PP
+Referenced by Cr2p(), and pll().
+.SS "#define COS(x)   (\fBREAL\fP)cos((\fBREAL\fP)x)"
+.PP
+Normal (slow) real cosine function 
+.PP
+Definition at line 80 of file fastrig.h.
+.SS "#define ONE_OVER_TWOPI   (0.159154943091895)"
+.PP
+Constant 1 / (2 * Pi) 
+.PP
+Definition at line 97 of file fastrig.h.
+.SS "#define PI   M_PI"
+.PP
+Constant Pi 
+.PP
+Definition at line 87 of file fastrig.h.
+.SS "#define SIN(x)   (\fBREAL\fP)sin((\fBREAL\fP)x)"
+.PP
+Normal (slow) real sine function 
+.PP
+Definition at line 79 of file fastrig.h.
+.SS "#define SIN_TABLE_SIZE   (4096)"
+.PP
+Sine table lookup size 
+.PP
+Definition at line 50 of file fastrig.h.
+.SS "#define TRIG_SPEED   (0)"
+.PP
+.IP "\(bu" 2
+0 = normal (slow);
+.IP "\(bu" 2
+1 = table look up with interpolation (medium);
+.IP "\(bu" 2
+2 = table look up (fast)
+.PP
+.PP
+Interpolation is ALWAYS done on atan2. The setting only applies to sin and cos 
+.PP
+Definition at line 62 of file fastrig.h.
+.SS "#define TWOPI   (2.0 * PI)"
+.PP
+Constant (2 * Pi) 
+.PP
+Definition at line 92 of file fastrig.h.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

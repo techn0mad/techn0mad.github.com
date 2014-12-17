@@ -1,0 +1,115 @@
+.TH "_loc" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_loc \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/local.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "char \fBname\fP [MAXPATHLEN]"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   int \fBoffs\fP"
+.br
+.ti -1c
+.RI "} \fBskew\fP"
+.br
+.ti -1c
+.RI "char \fBrcfile\fP [MAXPATHLEN]"
+.br
+.ti -1c
+.RI "char \fBparm\fP [MAXPATHLEN]"
+.br
+.ti -1c
+.RI "char \fBecho\fP [MAXPATHLEN]"
+.br
+.ti -1c
+.RI "char \fBblowr\fP [MAXPATHLEN]"
+.br
+.ti -1c
+.RI "char \fBmeter\fP [MAXPATHLEN]"
+.br
+.ti -1c
+.RI "char \fBreplay\fP [MAXPATHLEN]"
+.br
+.ti -1c
+.RI "char \fBspec\fP [MAXPATHLEN]"
+.br
+.ti -1c
+.RI "char \fBwisdom\fP [MAXPATHLEN]"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBrate\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "int \fBnrx\fP"
+.br
+.ti -1c
+.RI "int \fBspec\fP"
+.br
+.ti -1c
+.RI "int \fBcomp\fP"
+.br
+.ti -1c
+.RI "\fBSDRMODE\fP \fBmode\fP"
+.br
+.ti -1c
+.RI "int \fBring\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+?? structure 
+.PP
+Definition at line 50 of file local.h.
+.SH "Field Documentation"
+.PP 
+.SS "char \fB_loc::name\fP[MAXPATHLEN]"
+.PP
+Name 
+.PP
+Definition at line 54 of file local.h.
+.PP
+Referenced by setup_defaults(), setup_from_commandline(), and setup_system_audio().
+.SS "\fBREAL\fP \fB_loc::rate\fP"
+.PP
+sample rate 
+.PP
+Definition at line 70 of file local.h.
+.PP
+Referenced by reset_for_buflen(), setup(), and setup_defaults().
+.SS "\fBSDRMODE\fP \fB_loc::mode\fP"
+.PP
+radio mode 
+.PP
+Definition at line 77 of file local.h.
+.PP
+Referenced by reset_for_buflen(), setup(), setup_defaults(), and setup_from_commandline().
+.SS "int \fB_loc::offs\fP"
+.PP
+offset 
+.PP
+Definition at line 89 of file local.h.
+.PP
+Referenced by setup_defaults(), setup_from_commandline(), and setup_local_audio().
+.SS "struct { ... }   \fB_loc::skew\fP"
+.PP
+Timezone structure(?) 
+.PP
+Referenced by setup_defaults(), setup_from_commandline(), and setup_local_audio().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

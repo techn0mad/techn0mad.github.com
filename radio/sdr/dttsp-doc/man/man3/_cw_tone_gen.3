@@ -1,0 +1,161 @@
+.TH "_cw_tone_gen" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_cw_tone_gen \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/cwtones.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBREAL\fP \fBcurr\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBgain\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBmul\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBscl\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBsr\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBfreq\fP"
+.br
+.ti -1c
+.RI "   \fBOSC\fP \fBgen\fP"
+.br
+.ti -1c
+.RI "} \fBosc\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBdur\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBincr\fP"
+.br
+.ti -1c
+.RI "   int \fBwant\fP"
+.br
+.ti -1c
+.RI "   int \fBhave\fP"
+.br
+.ti -1c
+.RI "} \fBrise\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBdur\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBincr\fP"
+.br
+.ti -1c
+.RI "   int \fBwant\fP"
+.br
+.ti -1c
+.RI "   int \fBhave\fP"
+.br
+.ti -1c
+.RI "} \fBfall\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "int \fBstage\fP"
+.br
+.ti -1c
+.RI "\fBCXB\fP \fBbuf\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+CW tone generator 
+.PP
+Definition at line 53 of file cwtones.h.
+.SH "Field Documentation"
+.PP 
+.SS "\fBREAL\fP \fB_cw_tone_gen::gain\fP"
+.PP
+Gain 
+.PP
+Definition at line 55 of file cwtones.h.
+.PP
+Referenced by CWToneOn(), and setCWToneGenVals().
+.SS "\fBREAL\fP \fB_cw_tone_gen::scl\fP"
+.PP
+Scale 
+.PP
+Definition at line 55 of file cwtones.h.
+.PP
+Referenced by CWTone(), and CWToneOn().
+.SS "\fBREAL\fP \fB_cw_tone_gen::freq\fP"
+.PP
+Frequency 
+.PP
+Definition at line 64 of file cwtones.h.
+.PP
+Referenced by CWToneOn(), newCWToneGen(), and setCWToneGenVals().
+.SS "\fBOSC\fP \fB_cw_tone_gen::gen\fP"
+.PP
+Generator 
+.PP
+Definition at line 65 of file cwtones.h.
+.PP
+Referenced by CWTone(), CWToneOn(), delCWToneGen(), and newCWToneGen().
+.SS "struct { ... }   \fB_cw_tone_gen::osc\fP"
+.PP
+Tone 
+.PP
+Referenced by CWTone(), CWToneOn(), delCWToneGen(), newCWToneGen(), and setCWToneGenVals().
+.SS "\fBREAL\fP \fB_cw_tone_gen::dur\fP"
+.PP
+Duration 
+.PP
+Definition at line 71 of file cwtones.h.
+.PP
+Referenced by CWToneOn(), and setCWToneGenVals().
+.SS "\fBREAL\fP \fB_cw_tone_gen::incr\fP"
+.PP
+Increment 
+.PP
+Definition at line 71 of file cwtones.h.
+.PP
+Referenced by CWTone(), and CWToneOn().
+.SS "struct { ... }   \fB_cw_tone_gen::rise\fP"
+.PP
+Envelope timing 
+.PP
+Referenced by CWTone(), CWToneOn(), and setCWToneGenVals().
+.SS "struct { ... }   \fB_cw_tone_gen::fall\fP"
+.PP
+Envelope timing 
+.PP
+Referenced by CWToneOn(), and setCWToneGenVals().
+.SS "\fBCXB\fP \fB_cw_tone_gen::buf\fP"
+.PP
+Buffer 
+.PP
+Definition at line 80 of file cwtones.h.
+.PP
+Referenced by delCWToneGen(), and newCWToneGen().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

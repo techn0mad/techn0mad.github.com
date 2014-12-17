@@ -1,0 +1,121 @@
+.TH "cwtones.h" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+cwtones.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fromsys.h>\fP
+.br
+\fC#include <banal.h>\fP
+.br
+\fC#include <datatypes.h>\fP
+.br
+\fC#include <bufvec.h>\fP
+.br
+\fC#include <cxops.h>\fP
+.br
+\fC#include <oscillator.h>\fP
+.br
+\fC#include <math.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_cw_tone_gen\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCWTone_IDLE\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBCWTone_WAIT\fP   (1)"
+.br
+.ti -1c
+.RI "#define \fBCWTone_RISE\fP   (2)"
+.br
+.ti -1c
+.RI "#define \fBCWTone_STDY\fP   (3)"
+.br
+.ti -1c
+.RI "#define \fBCWTone_FALL\fP   (4)"
+.br
+.ti -1c
+.RI "#define \fBCWTone_HOLD\fP   (5)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fB_cw_tone_gen\fP \fBCWToneGenDesc\fP"
+.br
+.ti -1c
+.RI "typedef \fB_cw_tone_gen\fP * \fBCWToneGen\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCWToneGen\fP \fBnewCWToneGen\fP (\fBREAL\fP gain, \fBREAL\fP freq, \fBREAL\fP rise, \fBREAL\fP fall, int size, \fBREAL\fP samplerate)"
+.br
+.ti -1c
+.RI "void \fBdelCWToneGen\fP (\fBCWToneGen\fP gen)"
+.br
+.ti -1c
+.RI "void \fBsetCWToneGenVals\fP (\fBCWToneGen\fP gen, \fBREAL\fP gain, \fBREAL\fP freq, \fBREAL\fP rise, \fBREAL\fP fall)"
+.br
+.ti -1c
+.RI "void \fBCWToneOn\fP (\fBCWToneGen\fP gen)"
+.br
+.ti -1c
+.RI "void \fBCWToneOff\fP (\fBCWToneGen\fP gen)"
+.br
+.ti -1c
+.RI "\fBBOOLEAN\fP \fBCWTone\fP (\fBCWToneGen\fP gen)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2005 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBcwtones.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB_cw_tone_gen\fP * \fBCWToneGen\fP"
+.PP
+CW tone generator 
+.SS "typedef struct \fB_cw_tone_gen\fP  \fBCWToneGenDesc\fP"
+.PP
+CW tone generator 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

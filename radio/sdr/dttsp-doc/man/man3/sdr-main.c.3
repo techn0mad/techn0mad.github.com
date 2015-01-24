@@ -1,0 +1,219 @@
+.TH "sdr-main.c" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sdr-main.c \- DttSp Mainline. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <common.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreset_meters\fP (void)"
+.br
+.ti -1c
+.RI "void \fBreset_spectrum\fP (void)"
+.br
+.ti -1c
+.RI "void \fBreset_counters\fP (void)"
+.br
+.ti -1c
+.RI "void \fBprocess_samples\fP (float *, float *, int)"
+.br
+.ti -1c
+.RI "void \fBsetup_workspace\fP (\fBREAL\fP rate, int buflen, \fBSDRMODE\fP mode, char *wisdom, int specsize, int numrecv, int cpdsize)"
+.br
+.ti -1c
+.RI "void \fBdestroy_workspace\fP (void)"
+.br
+.ti -1c
+.RI "int \fBreset_for_buflen\fP (int new_buflen)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBspectrum_thread\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBmeter_thread\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBmonitor_thread\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBprocess_updates_thread\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBgethold\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE \fBBOOLEAN\fP \fBcanhold\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBrun_mute\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBrun_pass\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBrun_play\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBrun_swch\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBaudio_callback\fP (jack_nframes_t nframes, void *arg)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBprocess_samples_thread\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBexecute\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBsetup_local_audio\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBsetup_updates\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBjack_xrun\fP (void *arg)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBjack_shutdown\fP (void *arg)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBsetup_system_audio\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE sem_t * \fBmake_sem\fP (char *id)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBsetup_threading\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBsetup_defaults\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdestroy_globals\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBcloseup\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBusage\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBsetup_from_commandline\fP (int argc, char **argv)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBcreate_globals\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBsetup\fP (int argc, char **argv)"
+.br
+.ti -1c
+.RI "int \fBmain\fP (int argc, char **argv)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_loc\fP \fBloc\fP"
+.br
+.ti -1c
+.RI "PRIVATE struct option \fBlong_options\fP []"
+.br
+.ti -1c
+.RI "PRIVATE char * \fBshort_options\fP = 'vmsl:h?'"
+.br
+.ti -1c
+.RI "PRIVATE int \fBoption_index\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+DttSp Mainline. 
+
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBsdr-main.c\fP.
+.SH "Function Documentation"
+.PP 
+.SS "PRIVATE void create_globals (void)"
+.PP
+Allocate global memory areas 
+.PP
+Definition at line 924 of file sdr-main.c.
+.PP
+References MAXRX, rx, safealloc(), top, tx, and uni.
+.PP
+Referenced by setup().
+.SS "int main (int argc, char ** argv)"
+.PP
+Mainline 
+.PP
+Definition at line 979 of file sdr-main.c.
+.PP
+References closeup(), execute(), and setup().
+.SS "PRIVATE void setup (int argc, char ** argv)"
+.PP
+Set everything up 
+.PP
+Definition at line 939 of file sdr-main.c.
+.PP
+References _loc::comp, create_globals(), _loc::def, DEFOFFS, DEFSIZE, _top::doin, FALSE, loc, _loc::mode, _loc::nrx, _top::offs, _loc::path, _top::pid, _loc::rate, reset_counters(), reset_meters(), reset_spectrum(), _top::rsiz, RUN_PLAY, _top::running, safememreset(), setup_defaults(), setup_from_commandline(), setup_local_audio(), setup_system_audio(), setup_threading(), setup_updates(), setup_workspace(), _loc::size, _top::snds, _loc::spec, _top::start_tv, _top::state, top, TRUE, _top::uid, _top::verbose, and _loc::wisdom.
+.PP
+Referenced by main().
+.SS "PRIVATE void setup_defaults (void)"
+.PP
+Setup default parameters 
+.PP
+Definition at line 661 of file sdr-main.c.
+.PP
+References _loc::blowr, _loc::comp, _loc::def, DEFCOMP, DEFMODE, DEFOFFS, DEFRATE, DEFSIZE, DEFSPEC, _loc::echo, loc, MAXRX, _loc::meter, METERPATH, _loc::mode, _loc::mult, _loc::name, _loc::nrx, _loc::offs, _loc::parm, PARMPATH, _loc::path, _loc::rate, RCBASE, _loc::rcfile, _loc::replay, REPLAYPATH, _loc::ring, RINGMULT, _loc::size, _loc::skew, _loc::spec, SPECPATH, _loc::wisdom, and WISDOMPATH.
+.PP
+Referenced by setup().
+.SS "PRIVATE void setup_from_commandline (int argc, char ** argv)"
+.PP
+Setup based on command line arguments 
+.PP
+Definition at line 831 of file sdr-main.c.
+.PP
+References _loc::blowr, _loc::def, _loc::echo, _meter_block::flag, _spec_block::flag, loc, _loc::meter, _uni::meter, _loc::mode, _loc::mult, _loc::name, _loc::offs, _loc::parm, _loc::path, _loc::rcfile, _loc::replay, _loc::ring, _loc::size, _loc::skew, _loc::spec, _uni::spec, top, TRUE, uni, usage(), _top::verbose, and _loc::wisdom.
+.PP
+Referenced by setup().
+.SS "PRIVATE void usage (void)"
+.PP
+Print out user help 
+.PP
+Definition at line 985 of file sdr-main.c.
+.PP
+Referenced by setup_from_commandline().
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

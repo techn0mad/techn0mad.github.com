@@ -1,0 +1,214 @@
+.TH "banal.h" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+banal.h \- Stuff we're too embarrassed to declare otherwise. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fromsys.h>\fP
+.br
+\fC#include <defs.h>\fP
+.br
+\fC#include <datatypes.h>\fP
+.br
+
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBmin\fP(a, b)   ((a) < (b) ? (a) : (b))"
+.br
+.ti -1c
+.RI "#define \fBmax\fP(a, b)   ((a) > (b) ? (a) : (b))"
+.br
+.ti -1c
+.RI "#define \fBabs\fP(a)   ((a) >= 0 ? (a) : -(a))"
+.br
+.ti -1c
+.RI "#define \fBMONDO\fP   1e16"
+.br
+.ti -1c
+.RI "#define \fBBITSY\fP   1e-16"
+.br
+.ti -1c
+.RI "#define \fBKINDA\fP   2.56e2"
+.br
+.ti -1c
+.RI "#define \fBTRUE\fP   1"
+.br
+.ti -1c
+.RI "#define \fBFALSE\fP   0"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBnilfunc\fP (void)"
+.br
+.ti -1c
+.RI "int \fBpopcnt\fP (int)"
+.br
+.ti -1c
+.RI "int \fBnpoof2\fP (int)"
+.br
+.ti -1c
+.RI "int \fBnblock2\fP (int)"
+.br
+.ti -1c
+.RI "int \fBin_blocks\fP (int count, int block_size)"
+.br
+.ti -1c
+.RI "INLINE \fBREAL\fP \fBsqr\fP (\fBREAL\fP)"
+.br
+.ti -1c
+.RI "INLINE \fBREAL\fP \fBLog10\fP (\fBREAL\fP)"
+.br
+.ti -1c
+.RI "INLINE \fBREAL\fP \fBLog10P\fP (\fBREAL\fP)"
+.br
+.ti -1c
+.RI "INLINE \fBREAL\fP \fBLog10Q\fP (\fBREAL\fP)"
+.br
+.ti -1c
+.RI "INLINE \fBREAL\fP \fBdBP\fP (\fBREAL\fP)"
+.br
+.ti -1c
+.RI "INLINE \fBREAL\fP \fBDamPlus\fP (\fBREAL\fP, \fBREAL\fP)"
+.br
+.ti -1c
+.RI "FILE * \fBefopen\fP (char *path, char *mode)"
+.br
+.ti -1c
+.RI "FILE * \fBefreopen\fP (char *path, char *mode, FILE *strm)"
+.br
+.ti -1c
+.RI "size_t \fBfilesize\fP (char *path)"
+.br
+.ti -1c
+.RI "size_t \fBfdsize\fP (int fd)"
+.br
+.ti -1c
+.RI "timeval \fBnow_tv\fP (void)"
+.br
+.ti -1c
+.RI "timeval \fBdiff_tv\fP (struct timeval *, struct timeval *)"
+.br
+.ti -1c
+.RI "timeval \fBsum_tv\fP (struct timeval *, struct timeval *)"
+.br
+.ti -1c
+.RI "char * \fBfmt_tv\fP (struct timeval *)"
+.br
+.ti -1c
+.RI "char * \fBsince\fP (struct timeval *)"
+.br
+.ti -1c
+.RI "int \fBhinterp_vec\fP (\fBREAL\fP *, int, \fBREAL\fP *, int)"
+.br
+.ti -1c
+.RI "void \fBstatus_message\fP (char *msg)"
+.br
+.ti -1c
+.RI "FILE * \fBfind_rcfile\fP (char *base)"
+.br
+.ti -1c
+.RI "unsigned long \fBhash\fP (unsigned char *str)"
+.br
+.ti -1c
+.RI "int \fBgcd\fP (int m, int n)"
+.br
+.ti -1c
+.RI "int \fBleast_common_mul\fP (int i, int j)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Stuff we're too embarrassed to declare otherwise. 
+
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBbanal.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define abs(a)   ((a) >= 0 ? (a) : -(a))"
+.PP
+Return absolute value of \fIa\fP 
+.PP
+Definition at line 60 of file banal.h.
+.PP
+Referenced by least_common_mul(), and normalize_vec_REAL().
+.SS "#define BITSY   1e-16"
+.PP
+A small number 
+.PP
+Definition at line 65 of file banal.h.
+.PP
+Referenced by dBP(), do_tx_meter(), Log10(), Log10P(), and Log10Q().
+.SS "#define FALSE   0"
+.PP
+False constant 
+.PP
+Definition at line 71 of file banal.h.
+.PP
+Referenced by audio_callback(), do_update(), newCXB(), newFIR_REAL(), newRLB(), no_rx_squelch(), no_tx_squelch(), replay_updates(), setCompandSt(), setDCBlockSt(), setFinished(), setGrphRXEQcmd(), setGrphTXEQcmd(), setNewBuflen(), setRXOff(), setSpectrumPolyphase(), setTXCompandSt(), setup(), setup_rx(), setup_threading(), setup_tx(), setup_workspace(), should_do_rx_squelch(), and should_do_tx_squelch().
+.SS "#define KINDA   2.56e2"
+.PP
+An important number 
+.PP
+Definition at line 67 of file banal.h.
+.PP
+Referenced by reset_meters().
+.SS "#define max(a, b)   ((a) > (b) ? (a) : (b))"
+.PP
+Return maximum of \fIa\fP and \fIb\fP 
+.PP
+Definition at line 54 of file banal.h.
+.PP
+Referenced by audio_callback(), CXBpeak(), CXBpeakpwr(), do_rx_meter(), DttSPAgc(), normalize_vec_COMPLEX(), normalize_vec_REAL(), and setSpectrumPolyphase().
+.SS "#define min(a, b)   ((a) < (b) ? (a) : (b))"
+.PP
+Return minimum of \fIa\fP and \fIb\fP 
+.PP
+Definition at line 48 of file banal.h.
+.PP
+Referenced by do_rx_NIL(), do_rx_pre(), do_tx_AM(), do_tx_FM(), do_tx_NIL(), do_tx_SBCW(), and DttSPAgc().
+.SS "#define MONDO   1e16"
+.PP
+A large number 
+.PP
+Definition at line 63 of file banal.h.
+.PP
+Referenced by normalize_vec_COMPLEX(), and normalize_vec_REAL().
+.SS "#define TRUE   1"
+.PP
+True constant 
+.PP
+Definition at line 69 of file banal.h.
+.PP
+Referenced by do_rx_squelch(), do_tx_squelch(), do_update(), newCXB(), newFIR_COMPLEX(), newRLB(), replay_updates(), setNewBuflen(), setRingBufferOffset(), setRingBufferReset(), setRXAGC(), setRXOn(), setSNDSResetSize(), setSpectrumPolyphase(), setSpotTone(), setup(), setup_from_commandline(), setup_rx(), setup_system_audio(), setup_tx(), setup_updates(), and setup_workspace().
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

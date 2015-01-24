@@ -1,0 +1,164 @@
+.TH "sdr.c" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sdr.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <common.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreset_meters\fP (void)"
+.br
+.ti -1c
+.RI "void \fBreset_spectrum\fP (void)"
+.br
+.ti -1c
+.RI "void \fBreset_counters\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBsetup_all\fP (\fBREAL\fP rate, int buflen, \fBSDRMODE\fP mode, char *wisdom, int specsize, int numrecv, int cpdsize)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBsetup_rx\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBsetup_tx\fP (void)"
+.br
+.ti -1c
+.RI "void \fBsetup_workspace\fP (\fBREAL\fP rate, int buflen, \fBSDRMODE\fP mode, char *wisdom, int specsize, int numrecv, int cpdsize)"
+.br
+.ti -1c
+.RI "void \fBdestroy_workspace\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBCXBscl\fP (\fBCXB\fP buff, \fBREAL\fP scl)"
+.br
+.ti -1c
+.RI "PRIVATE \fBREAL\fP \fBCXBnorm\fP (\fBCXB\fP buff)"
+.br
+.ti -1c
+.RI "PRIVATE \fBREAL\fP \fBCXBnormsqr\fP (\fBCXB\fP buff)"
+.br
+.ti -1c
+.RI "PRIVATE \fBREAL\fP \fBCXBpeak\fP (\fBCXB\fP buff)"
+.br
+.ti -1c
+.RI "PRIVATE \fBREAL\fP \fBCXBpeakpwr\fP (\fBCXB\fP buff)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_meter\fP (int k, \fBCXB\fP buf, int tap)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_spectrum\fP (int k, \fBCXB\fP buf, int type)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_tx_spectrum\fP (\fBCXB\fP buf)"
+.br
+.ti -1c
+.RI "PRIVATE \fBBOOLEAN\fP \fBshould_do_rx_squelch\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE \fBBOOLEAN\fP \fBshould_do_tx_squelch\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_squelch\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_tx_squelch\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBno_rx_squelch\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBno_tx_squelch\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_pre\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_post\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_SBCW\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_AM\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_FM\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_DRM\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_SPEC\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx_NIL\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_rx\fP (int k)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_tx_meter\fP (\fBCXB\fP buf, TXMETERTYPE mt)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_tx_pre\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_tx_post\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_tx_SBCW\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_tx_AM\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_tx_FM\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_tx_NIL\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBdo_tx\fP (void)"
+.br
+.ti -1c
+.RI "void \fBprocess_samples\fP (float *bufl, float *bufr, int n)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY.
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBsdr.c\fP.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

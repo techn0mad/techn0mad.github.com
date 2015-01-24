@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+
+<html>
+<head>
+
+<!-- These are optional -->
+<META NAME="description" CONTENT="NovAtel Veterans e-Mail List">
+<META NAME="keywords" CONTENT="NovAtel, Veterans, Alumni, Wireless, Cellular, Calgary">
+
+<title>
+The NovAtel Veterans e-Mail List
+</title>
+
+<!-- google analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28057007-1']);
+  _gaq.push(['_setDomainName', 'gadallah.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000AA" VLINK="#AA0000" ALINK="#00AA00">
+<!-- alter background, link colors to suit your taste -->
+<!-- the tag BACKGROUND = "some.image" -->
+<!-- can be inserted in the body declaration -->
+
+
+<!--#config timefmt="%B %d, %Y %H:%M:%S"-->
+
+<table width="100%" cellpadding=0>
+
+<colgroup span=3 width="33%">
+</colgroup>
+
+<tr>
+<td align=left>Back to <a href="/">www.gadallah.com</a>
+<td align=center>Up to <a href="/">www.gadallah.com</a>
+<td align=right>Updated: <!--#echo var="LAST_MODIFIED"--> 
+
+</table>
+
+<hr>
+
+
+<!-- and now for a title at the top of the page -->
+<h1 align = "center">
+The NovAtel Veterans e-Mail List
+</h1>
+
+<p>
+The NovAtel veterans mailing list is no longer being maintained.
+I recommend that you investigate the excellent site 
+<a href="http://www.linkedin.com/">
+LinkedIn</a> for many ways to locate and contact former colleagues.
+</p>
+
+<p>
+Best regards,<br>
+Larry Gadallah
+</p>
+
+<hr>
+
+</body>
+
+</html>

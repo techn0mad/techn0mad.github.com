@@ -1,0 +1,195 @@
+.TH "sdrexport.h" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sdrexport.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fromsys.h>\fP
+.br
+\fC#include <defs.h>\fP
+.br
+\fC#include <banal.h>\fP
+.br
+\fC#include <splitfields.h>\fP
+.br
+\fC#include <datatypes.h>\fP
+.br
+\fC#include <bufvec.h>\fP
+.br
+\fC#include <cxops.h>\fP
+.br
+\fC#include <ringb.h>\fP
+.br
+\fC#include <lmadf.h>\fP
+.br
+\fC#include <fftw3.h>\fP
+.br
+\fC#include <ovsv.h>\fP
+.br
+\fC#include <filter.h>\fP
+.br
+\fC#include <oscillator.h>\fP
+.br
+\fC#include <dttspagc.h>\fP
+.br
+\fC#include <am_demod.h>\fP
+.br
+\fC#include <fm_demod.h>\fP
+.br
+\fC#include <noiseblanker.h>\fP
+.br
+\fC#include <correctIQ.h>\fP
+.br
+\fC#include <speechproc.h>\fP
+.br
+\fC#include <spottone.h>\fP
+.br
+\fC#include <update.h>\fP
+.br
+\fC#include <local.h>\fP
+.br
+\fC#include <meter.h>\fP
+.br
+\fC#include <spectrum.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_uni\fP"
+.br
+.ti -1c
+.RI "struct \fB_rx\fP"
+.br
+.ti -1c
+.RI "struct \fB_tx\fP"
+.br
+.ti -1c
+.RI "struct \fB_top\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMAXRX\fP   (4)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fB_runmode\fP \fBRUNMODE\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fB_runmode\fP { \fBRUN_MUTE\fP, \fBRUN_PASS\fP, \fBRUN_PLAY\fP, \fBRUN_SWCH\fP }"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB_uni\fP * \fBuni\fP"
+.br
+.ti -1c
+.RI "\fB_rx\fP * \fBrx\fP [MAXRX]"
+.br
+.ti -1c
+.RI "\fB_tx\fP * \fBtx\fP"
+.br
+.ti -1c
+.RI "\fB_top\fP * \fBtop\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBsdrexport.h\fP.
+.SH "Define Documentation"
+.PP 
+.SS "#define MAXRX   (4)"
+.PP
+Maximum simultaneous receivers 
+.PP
+Definition at line 64 of file sdrexport.h.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef enum \fB_runmode\fP  \fBRUNMODE\fP"
+.PP
+Run mode/state 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fB_runmode\fP"
+.PP
+Run mode/state 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIRUN_MUTE \fP\fP
+Muted 
+.TP
+\fB\fIRUN_PASS \fP\fP
+Pass-through 
+.TP
+\fB\fIRUN_PLAY \fP\fP
+Normal 
+.TP
+\fB\fIRUN_SWCH \fP\fP
+Rx/Tx Switching 
+.PP
+Definition at line 344 of file sdrexport.h.
+.SH "Variable Documentation"
+.PP 
+.SS "struct \fB_rx\fP  * \fBrx\fP[ MAXRX ]"
+.PP
+Receiver control 
+.PP
+Referenced by create_globals(), destroy_globals(), destroy_workspace(), do_rx(), do_rx_AM(), do_rx_FM(), do_rx_meter(), do_rx_NIL(), do_rx_post(), do_rx_pre(), do_rx_SBCW(), do_rx_spectrum(), do_rx_squelch(), no_rx_squelch(), process_samples(), reset_counters(), setANF(), setANFvals(), setBIN(), setBlkANF(), setBlkANFval(), setBlkNR(), setBlkNRval(), setCompand(), setCompandSt(), setcorrectIQ(), setcorrectIQgain(), setcorrectIQphase(), setfixedAGC(), setGrphRXEQ10(), setGrphRXEQ3(), setGrphRXEQcmd(), setMode(), setNB(), setNBvals(), setNR(), setNRvals(), setOsc(), setRXAGC(), setRXAGCAttack(), setRXAGCCompression(), setRXAGCDecay(), setRXAGCFix(), setRXAGCHang(), setRXAGCHangThreshold(), setRXAGCLimit(), setRXAGCSlope(), setRXAGCTop(), setRXFilter(), setRXGain(), setRXOn(), setRXPan(), setSDROM(), setSDROMvals(), setSpotTone(), setSpotToneVals(), setSquelch(), setSquelchSt(), setup_rx(), and should_do_rx_squelch().
+.SS "struct \fB_top\fP * \fBtop\fP"
+.PP
+Process control 
+.PP
+Referenced by audio_callback(), canhold(), closeup(), create_globals(), destroy_globals(), do_update(), execute(), gethold(), jack_xrun(), make_sem(), meter_thread(), monitor_thread(), process_samples_thread(), process_updates_thread(), replay_updates(), reqMeter(), reqRXMeter(), reqScope(), reqSpectrum(), reqTXMeter(), reset_for_buflen(), run_mute(), run_play(), run_swch(), setFinished(), setMonDump(), setNewBuflen(), setRingBufferOffset(), setRingBufferReset(), setRunState(), setRXAGCTop(), setSNDSResetSize(), setSWCH(), setTXLevelerTop(), setup(), setup_from_commandline(), setup_local_audio(), setup_system_audio(), setup_threading(), setup_updates(), and spectrum_thread().
+.SS "struct \fB_tx\fP * \fBtx\fP"
+.PP
+Transmitter control 
+.PP
+Referenced by create_globals(), destroy_globals(), destroy_workspace(), do_tx(), do_tx_AM(), do_tx_FM(), do_tx_meter(), do_tx_NIL(), do_tx_post(), do_tx_pre(), do_tx_SBCW(), do_tx_spectrum(), do_tx_squelch(), no_tx_squelch(), reset_counters(), setCompand(), setCompandSt(), setcorrectTXIQ(), setcorrectTXIQgain(), setcorrectTXIQphase(), setDCBlock(), setDCBlockSt(), setfixedAGC(), setGrphTXEQ10(), setGrphTXEQ3(), setGrphTXEQcmd(), setMode(), setNotch160(), setOsc(), setTXAGCFF(), setTXAGCFFCompression(), setTXAGCLimit(), setTXALCAttack(), setTXALCBot(), setTXALCDecay(), setTXALCHang(), setTXCarrierLevel(), setTXCompand(), setTXCompandSt(), setTXFilter(), setTXLevelerAttack(), setTXLevelerDecay(), setTXLevelerHang(), setTXLevelerSt(), setTXLevelerTop(), setTXSpeechCompression(), setTXSpeechCompressionGain(), setTXSquelch(), setTXSquelchSt(), setup_tx(), and should_do_tx_squelch().
+.SS "struct \fB_uni\fP * \fBuni\fP"
+.PP
+Common control 
+.PP
+Referenced by closeup(), create_globals(), destroy_globals(), destroy_workspace(), do_rx_meter(), do_rx_NIL(), do_rx_pre(), do_rx_spectrum(), do_tx_AM(), do_tx_FM(), do_tx_meter(), do_tx_NIL(), do_tx_post(), do_tx_SBCW(), do_tx_spectrum(), do_update(), execute(), meter_thread(), monitor_thread(), process_samples(), replay_updates(), reqMeter(), reqRXMeter(), reqScope(), reqSpectrum(), reqTXMeter(), reset_counters(), reset_meters(), reset_spectrum(), run_mute(), run_pass(), setGrphRXEQ10(), setGrphRXEQ3(), setGrphTXEQ10(), setGrphTXEQ3(), setMode(), setNewBuflen(), setOsc(), setRXAGC(), setRXAGCAttack(), setRXAGCDecay(), setRXFilter(), setRXListen(), setRXOff(), setRXOn(), setSpectrumPolyphase(), setSpectrumType(), setSpectrumWindow(), setSWCH(), setTRX(), setTXALCAttack(), setTXALCDecay(), setTXFilter(), setTXLevelerAttack(), setTXLevelerDecay(), setup_all(), setup_from_commandline(), setup_local_audio(), setup_rx(), setup_threading(), setup_tx(), setup_updates(), setup_workspace(), and spectrum_thread().
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

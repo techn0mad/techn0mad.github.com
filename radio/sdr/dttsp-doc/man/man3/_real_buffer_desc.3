@@ -1,0 +1,83 @@
+.TH "_real_buffer_desc" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_real_buffer_desc \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/bufvec.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBREAL\fP * \fBdata\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "int \fBovlp\fP"
+.br
+.ti -1c
+.RI "int \fBwant\fP"
+.br
+.ti -1c
+.RI "int \fBhave\fP"
+.br
+.ti -1c
+.RI "int \fBdone\fP"
+.br
+.ti -1c
+.RI "int \fBmine\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Real data buffer 
+.PP
+Definition at line 86 of file bufvec.h.
+.SH "Field Documentation"
+.PP 
+.SS "\fBREAL\fP* \fB_real_buffer_desc::data\fP"
+.PP
+Pointer to array of real data 
+.PP
+Definition at line 88 of file bufvec.h.
+.SS "int \fB_real_buffer_desc::size\fP"
+.PP
+Size of real data buffer 
+.PP
+Definition at line 89 of file bufvec.h.
+.SS "int \fB_real_buffer_desc::ovlp\fP"
+.PP
+For situations (as in the overlap-save filter) where the left and right segments are different sizes, (i.e. unequal halves). Not used here. 
+.PP
+Definition at line 89 of file bufvec.h.
+.SS "int \fB_real_buffer_desc::want\fP"
+.PP
+How much of the buffer is expected to be filled when passed to a routine that produces samples. Not used here in any significant way. Important for implementing general linear convolution. 
+.PP
+Definition at line 89 of file bufvec.h.
+.SS "int \fB_real_buffer_desc::have\fP"
+.PP
+How much of the buffer has actually been filled after requesting samples to be put in it. 
+.PP
+Definition at line 89 of file bufvec.h.
+.SS "int \fB_real_buffer_desc::done\fP"
+.PP
+In case of a partial (non-blockwise) operation on the buffer, how many of the samples were actually operated on. 
+.PP
+Definition at line 89 of file bufvec.h.
+.SS "int \fB_real_buffer_desc::mine\fP"
+.PP
+Boolean. Whether the memory used for the buffer was allocated within the buffer creation routine, or was passed in with the base pointer as an argument to the creation routine. The primary use for this is overloading a single buffer for such things as the overlap-save routine, where the left and right halves of the buffer memory are accessed separately as well as a single sequence. If \fImine\fP is FALSE, no attempt is made to free the memory when the buffer is destroyed. It's assumed to be deallocated elsewhere. 
+.PP
+Definition at line 89 of file bufvec.h.
+.PP
+Referenced by delRLB().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

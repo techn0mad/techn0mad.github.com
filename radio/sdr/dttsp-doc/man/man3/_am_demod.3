@@ -1,0 +1,141 @@
+.TH "_am_demod" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_am_demod \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/am_demod.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "\fBCXB\fP \fBibuf\fP"
+.br
+.ti -1c
+.RI "\fBCXB\fP \fBobuf\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBalpha\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBbeta\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBfast_alpha\fP"
+.br
+.ti -1c
+.RI "   struct {"
+.br
+.ti -1c
+.RI "      \fBREAL\fP \fBf\fP"
+.br
+.ti -1c
+.RI "      \fBREAL\fP \fBl\fP"
+.br
+.ti -1c
+.RI "      \fBREAL\fP \fBh\fP"
+.br
+.ti -1c
+.RI "   } \fBfreq\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBphs\fP"
+.br
+.ti -1c
+.RI "   \fBCOMPLEX\fP \fBdelay\fP"
+.br
+.ti -1c
+.RI "} \fBpll\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBcurr\fP"
+.br
+.ti -1c
+.RI "   \fBREAL\fP \fBprev\fP"
+.br
+.ti -1c
+.RI "} \fBlock\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBdc\fP"
+.br
+.ti -1c
+.RI "\fBREAL\fP \fBsmooth\fP"
+.br
+.ti -1c
+.RI "\fBAMMode\fP \fBmode\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+AM demod data 
+.PP
+Definition at line 62 of file am_demod.h.
+.SH "Field Documentation"
+.PP 
+.SS "int \fB_am_demod::size\fP"
+.PP
+Buffer size 
+.PP
+Definition at line 64 of file am_demod.h.
+.PP
+Referenced by AMDemod(), and newAMD().
+.SS "\fBCXB\fP \fB_am_demod::ibuf\fP"
+.PP
+Input buffer 
+.PP
+Definition at line 65 of file am_demod.h.
+.PP
+Referenced by AMDemod(), delAMD(), and newAMD().
+.SS "\fBCXB\fP \fB_am_demod::obuf\fP"
+.PP
+Output buffer 
+.PP
+Definition at line 65 of file am_demod.h.
+.PP
+Referenced by AMDemod(), delAMD(), and newAMD().
+.SS "struct { ... }   \fB_am_demod::freq\fP"
+.PP
+Frequency control 
+.PP
+Referenced by init_pll(), and pll().
+.SS "struct { ... }   \fB_am_demod::pll\fP"
+.PP
+PLL control 
+.PP
+Referenced by dem(), init_pll(), and pll().
+.SS "struct { ... }   \fB_am_demod::lock\fP"
+.PP
+PLL lock 
+.PP
+Referenced by AMDemod(), dem(), and newAMD().
+.SS "\fBREAL\fP \fB_am_demod::dc\fP"
+.PP
+DC offset 
+.PP
+Definition at line 103 of file am_demod.h.
+.PP
+Referenced by AMDemod(), dem(), and newAMD().
+.SS "\fBAMMode\fP \fB_am_demod::mode\fP"
+.PP
+Demodulation mode 
+.PP
+Definition at line 106 of file am_demod.h.
+.PP
+Referenced by AMDemod(), and newAMD().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

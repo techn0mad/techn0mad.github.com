@@ -1,0 +1,184 @@
+.TH "_uni" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+_uni \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include </usr/home/larry/projects/DttSp/dttsp-ng/src/sdrexport.h>\fP
+.PP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBREAL\fP \fBsamplerate\fP"
+.br
+.ti -1c
+.RI "int \fBbuflen\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBSDRMODE\fP \fBsdr\fP"
+.br
+.ti -1c
+.RI "   \fBTRXMODE\fP \fBtrx\fP"
+.br
+.ti -1c
+.RI "} \fBmode\fP"
+.br
+.ti -1c
+.RI "\fBMETERBlock\fP \fBmeter\fP"
+.br
+.ti -1c
+.RI "\fBSpecBlock\fP \fBspec\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBflag\fP"
+.br
+.ti -1c
+.RI "   char * \fBpath\fP"
+.br
+.ti -1c
+.RI "   FILE * \fBfp\fP"
+.br
+.ti -1c
+.RI "   \fBsplitfld\fP \fBsplt\fP"
+.br
+.ti -1c
+.RI "} \fBupdate\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   char * \fBpath\fP"
+.br
+.ti -1c
+.RI "   int \fBbits\fP"
+.br
+.ti -1c
+.RI "} \fBwisdom\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   \fBBOOLEAN\fP \fBact\fP [MAXRX]"
+.br
+.ti -1c
+.RI "   int \fBlis\fP"
+.br
+.ti -1c
+.RI "   int \fBnac\fP"
+.br
+.ti -1c
+.RI "   int \fBnrx\fP"
+.br
+.ti -1c
+.RI "} \fBmultirx\fP"
+.br
+.ti -1c
+.RI "int \fBcpdlen\fP"
+.br
+.ti -1c
+.RI "long \fBtick\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Common control 
+.PP
+Definition at line 70 of file sdrexport.h.
+.SH "Field Documentation"
+.PP 
+.SS "int \fB_uni::buflen\fP"
+.PP
+Sample rate 
+.PP
+Definition at line 73 of file sdrexport.h.
+.PP
+Referenced by do_rx_NIL(), do_rx_pre(), do_tx_AM(), do_tx_FM(), do_tx_NIL(), do_tx_SBCW(), setRXFilter(), setTXFilter(), setup_all(), setup_local_audio(), setup_rx(), and setup_tx().
+.SS "\fBSDRMODE\fP \fB_uni::sdr\fP"
+.PP
+Modulation type 
+.PP
+Definition at line 78 of file sdrexport.h.
+.PP
+Referenced by setMode(), setup_all(), setup_rx(), and setup_tx().
+.SS "\fBTRXMODE\fP \fB_uni::trx\fP"
+.PP
+Transceiver mode 
+.PP
+Definition at line 79 of file sdrexport.h.
+.PP
+Referenced by process_samples(), setTRX(), and setup_all().
+.SS "struct { ... }   \fB_uni::mode\fP"
+.PP
+Operating mode 
+.PP
+Referenced by process_samples(), setMode(), setTRX(), setup_all(), setup_rx(), and setup_tx().
+.SS "\fBSpecBlock\fP \fB_uni::spec\fP"
+.PP
+S-Meter data 
+.PP
+Definition at line 83 of file sdrexport.h.
+.PP
+Referenced by closeup(), destroy_workspace(), do_rx_spectrum(), do_tx_post(), do_tx_spectrum(), execute(), reqScope(), reqSpectrum(), reset_spectrum(), setSpectrumPolyphase(), setSpectrumType(), setSpectrumWindow(), setup_all(), setup_from_commandline(), setup_threading(), setup_updates(), and spectrum_thread().
+.SS "\fBBOOLEAN\fP \fB_uni::flag\fP"
+.PP
+Enabled 
+.PP
+Definition at line 88 of file sdrexport.h.
+.PP
+Referenced by closeup(), do_update(), setNewBuflen(), and setup_updates().
+.SS "char* \fB_uni::path\fP"
+.PP
+File pathname 
+.PP
+Definition at line 89 of file sdrexport.h.
+.PP
+Referenced by setup_all(), and setup_updates().
+.SS "FILE* \fB_uni::fp\fP"
+.PP
+File handle 
+.PP
+Definition at line 90 of file sdrexport.h.
+.PP
+Referenced by closeup(), do_update(), replay_updates(), and setup_updates().
+.SS "struct { ... }   \fB_uni::update\fP"
+.PP
+Update(?) struct 
+.PP
+Referenced by closeup(), do_update(), replay_updates(), setNewBuflen(), and setup_updates().
+.SS "char* \fB_uni::path\fP"
+.PP
+File pathname 
+.PP
+Definition at line 97 of file sdrexport.h.
+.SS "struct { ... }   \fB_uni::wisdom\fP"
+.PP
+Wisdom(?) struct 
+.PP
+Referenced by setGrphRXEQ10(), setGrphRXEQ3(), setGrphTXEQ10(), setGrphTXEQ3(), setRXFilter(), setTXFilter(), setup_all(), setup_rx(), and setup_tx().
+.SS "\fBBOOLEAN\fP \fB_uni::act\fP[MAXRX]"
+.PP
+Activation flags 
+.PP
+Definition at line 104 of file sdrexport.h.
+.PP
+Referenced by process_samples(), setRXOff(), setRXOn(), and setup_workspace().
+.SS "struct { ... }   \fB_uni::multirx\fP"
+.PP
+Multi-RX control 
+.PP
+Referenced by destroy_workspace(), process_samples(), reset_counters(), setRXListen(), setRXOff(), setRXOn(), setup_all(), and setup_workspace().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

@@ -1,0 +1,260 @@
+.TH "filter.h" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+filter.h \- Filter definitions. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fromsys.h>\fP
+.br
+\fC#include <banal.h>\fP
+.br
+\fC#include <splitfields.h>\fP
+.br
+\fC#include <datatypes.h>\fP
+.br
+\fC#include <bufvec.h>\fP
+.br
+\fC#include <cxops.h>\fP
+.br
+\fC#include <fastrig.h>\fP
+.br
+\fC#include <update.h>\fP
+.br
+\fC#include <lmadf.h>\fP
+.br
+\fC#include <fftw3.h>\fP
+.br
+\fC#include <window.h>\fP
+.br
+\fC#include <math.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_real_FIR\fP"
+.br
+.ti -1c
+.RI "struct \fB_complex_FIR\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBFIRcoef\fP(p)   ((p)->coef)"
+.br
+.ti -1c
+.RI "#define \fBFIRtap\fP(p, i)   (FIRcoef(p)[(i)])"
+.br
+.ti -1c
+.RI "#define \fBFIRsize\fP(p)   ((p)->size)"
+.br
+.ti -1c
+.RI "#define \fBFIRtype\fP(p)   ((p)->type)"
+.br
+.ti -1c
+.RI "#define \fBFIRiscomplex\fP(p)   ((p)->cplx)"
+.br
+.ti -1c
+.RI "#define \fBFIRisreal\fP(p)   (!FIRiscomplex(p))"
+.br
+.ti -1c
+.RI "#define \fBFIRfqlo\fP(p)   ((p)->freq.lo)"
+.br
+.ti -1c
+.RI "#define \fBFIRfqhi\fP(p)   ((p)->freq.hi)"
+.br
+.ti -1c
+.RI "#define \fBdelFIR_Lowpass_REAL\fP(p)   delFIR_REAL(p)"
+.br
+.ti -1c
+.RI "#define \fBdelFIR_Lowpass_COMPLEX\fP(p)   delFIR_COMPLEX(p)"
+.br
+.ti -1c
+.RI "#define \fBdelFIR_Bandpass_REAL\fP(p)   delFIR_REAL(p)"
+.br
+.ti -1c
+.RI "#define \fBdelFIR_Bandpass_COMPLEX\fP(p)   delFIR_COMPLEX(p)"
+.br
+.ti -1c
+.RI "#define \fBdelFIR_Highpass_REAL\fP(p)   delFIR_REAL(p)"
+.br
+.ti -1c
+.RI "#define \fBdelFIR_Highpass_COMPLEX\fP(p)   delFIR_COMPLEX(p)"
+.br
+.ti -1c
+.RI "#define \fBdelFIR_Hilbert_REAL\fP(p)   delFIR_REAL(p)"
+.br
+.ti -1c
+.RI "#define \fBdelFIR_Hilbert_COMPLEX\fP(p)   delFIR_COMPLEX(p)"
+.br
+.ti -1c
+.RI "#define \fBdelFIR_Bandstop_REAL\fP(p)   delFIR_REAL(p)"
+.br
+.ti -1c
+.RI "#define \fBdelFIR_Bandstop_COMPLEX\fP(p)   delFIR_COMPLEX(p)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fB_real_FIR\fP \fBRealFIRDesc\fP"
+.br
+.ti -1c
+.RI "typedef \fB_real_FIR\fP * \fBRealFIR\fP"
+.br
+.ti -1c
+.RI "typedef \fB_complex_FIR\fP \fBComplexFIRDesc\fP"
+.br
+.ti -1c
+.RI "typedef \fB_complex_FIR\fP * \fBComplexFIR\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFIR_response_type\fP { \fBFIR_Undef\fP, \fBFIR_Lowpass\fP, \fBFIR_Bandpass\fP, \fBFIR_Highpass\fP, \fBFIR_Hilbert\fP, \fBFIR_Bandstop\fP }"
+.br
+.ti -1c
+.RI "enum \fBFIR_parity_type\fP { \fBFIR_Even\fP, \fBFIR_Odd\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRealFIR\fP \fBnewFIR_REAL\fP (int size, char *tag)"
+.br
+.ti -1c
+.RI "\fBComplexFIR\fP \fBnewFIR_COMPLEX\fP (int size, char *tag)"
+.br
+.ti -1c
+.RI "void \fBdelFIR_REAL\fP (\fBRealFIR\fP p)"
+.br
+.ti -1c
+.RI "void \fBdelFIR_COMPLEX\fP (\fBComplexFIR\fP p)"
+.br
+.ti -1c
+.RI "\fBRealFIR\fP \fBnewFIR_Lowpass_REAL\fP (\fBREAL\fP cutoff, \fBREAL\fP sr, int size)"
+.br
+.ti -1c
+.RI "\fBComplexFIR\fP \fBnewFIR_Lowpass_COMPLEX\fP (\fBREAL\fP cutoff, \fBREAL\fP sr, int size)"
+.br
+.ti -1c
+.RI "\fBRealFIR\fP \fBnewFIR_Bandpass_REAL\fP (\fBREAL\fP lo, \fBREAL\fP hi, \fBREAL\fP sr, int size)"
+.br
+.ti -1c
+.RI "\fBComplexFIR\fP \fBnewFIR_Bandpass_COMPLEX\fP (\fBREAL\fP lo, \fBREAL\fP hi, \fBREAL\fP sr, int size)"
+.br
+.ti -1c
+.RI "\fBRealFIR\fP \fBnewFIR_Highpass_REAL\fP (\fBREAL\fP cutoff, \fBREAL\fP sr, int size)"
+.br
+.ti -1c
+.RI "\fBComplexFIR\fP \fBnewFIR_Highpass_COMPLEX\fP (\fBREAL\fP cutoff, \fBREAL\fP sr, int size)"
+.br
+.ti -1c
+.RI "\fBRealFIR\fP \fBnewFIR_Hilbert_REAL\fP (\fBREAL\fP lo, \fBREAL\fP hi, \fBREAL\fP sr, int size)"
+.br
+.ti -1c
+.RI "\fBComplexFIR\fP \fBnewFIR_Hilbert_COMPLEX\fP (\fBREAL\fP lo, \fBREAL\fP hi, \fBREAL\fP sr, int size)"
+.br
+.ti -1c
+.RI "\fBRealFIR\fP \fBnewFIR_Bandstop_REAL\fP (\fBREAL\fP lo, \fBREAL\fP hi, \fBREAL\fP sr, int size)"
+.br
+.ti -1c
+.RI "\fBComplexFIR\fP \fBnewFIR_Bandstop_COMPLEX\fP (\fBREAL\fP lo, \fBREAL\fP hi, \fBREAL\fP sr, int size)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Filter definitions. 
+
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBfilter.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fB_complex_FIR\fP * \fBComplexFIR\fP"
+.PP
+Complex FIR filter structure 
+.SS "typedef struct \fB_complex_FIR\fP  \fBComplexFIRDesc\fP"
+.PP
+Complex FIR filter structure 
+.SS "typedef struct \fB_real_FIR\fP * \fBRealFIR\fP"
+.PP
+Real FIR filter structure 
+.SS "typedef struct \fB_real_FIR\fP  \fBRealFIRDesc\fP"
+.PP
+Real FIR filter structure 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBFIR_parity_type\fP"
+.PP
+FIR filter parity 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIFIR_Even \fP\fP
+Even parity 
+.TP
+\fB\fIFIR_Odd \fP\fP
+Odd parity 
+.PP
+Definition at line 65 of file filter.h.
+.SS "enum \fBFIR_response_type\fP"
+.PP
+FIR filter response 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIFIR_Undef \fP\fP
+Undefined 
+.TP
+\fB\fIFIR_Lowpass \fP\fP
+Lowpass 
+.TP
+\fB\fIFIR_Bandpass \fP\fP
+Bandpass 
+.TP
+\fB\fIFIR_Highpass \fP\fP
+Highpass 
+.TP
+\fB\fIFIR_Hilbert \fP\fP
+Hilbert 
+.TP
+\fB\fIFIR_Bandstop \fP\fP
+Bandstop 
+.PP
+Definition at line 54 of file filter.h.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

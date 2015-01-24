@@ -1,0 +1,6 @@
+base referer
+rect $fromsys_8h.html 500,82 580,108
+rect $banal_8h.html 246,56 310,83
+rect $datatypes_8h.html 360,107 451,134
+rect $bufvec_8h.html 122,208 194,235
+rect $cxops_8h.html 244,158 311,184

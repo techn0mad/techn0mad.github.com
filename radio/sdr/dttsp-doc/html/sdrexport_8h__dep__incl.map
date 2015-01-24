@@ -1,0 +1,9 @@
+base referer
+rect $common_8h.html 146,158 228,184
+rect $keyd_8c-source.html 156,208 218,235
+rect $local_8h.html 292,259 351,286
+rect $sdr-main_8c.html 280,6 363,32
+rect $sdr_8c.html 296,56 347,83
+rect $sdrexport_8c-source.html 278,107 366,134
+rect $thunk_8c.html 288,158 355,184
+rect $update_8c.html 286,208 358,235

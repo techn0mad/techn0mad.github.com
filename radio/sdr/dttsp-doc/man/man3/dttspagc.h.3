@@ -1,0 +1,133 @@
+.TH "dttspagc.h" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+dttspagc.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <fromsys.h>\fP
+.br
+\fC#include <defs.h>\fP
+.br
+\fC#include <banal.h>\fP
+.br
+\fC#include <splitfields.h>\fP
+.br
+\fC#include <datatypes.h>\fP
+.br
+\fC#include <bufvec.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fB_dttspagc\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBFASTLEAD\fP   (72)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fB_agcmode\fP \fBAGCMODE\fP"
+.br
+.ti -1c
+.RI "typedef \fB_dttspagc\fP \fBdttspagc\fP"
+.br
+.ti -1c
+.RI "typedef \fB_dttspagc\fP * \fBDTTSPAGC\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fB_agcmode\fP { \fBagcOFF\fP, \fBagcLONG\fP, \fBagcSLOW\fP, \fBagcMED\fP, \fBagcFAST\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDttSPAgc\fP (\fBDTTSPAGC\fP a, int tick)"
+.br
+.ti -1c
+.RI "\fBDTTSPAGC\fP \fBnewDttSPAgc\fP (\fBAGCMODE\fP mode, \fBCOMPLEX\fP *Vec, int BufSize, \fBREAL\fP Limit, \fBREAL\fP attack, \fBREAL\fP decay, \fBREAL\fP slope, \fBREAL\fP hangtime, \fBREAL\fP samprate, \fBREAL\fP MaxGain, \fBREAL\fP MinGain, \fBREAL\fP Curgain, char *tag)"
+.br
+.ti -1c
+.RI "void \fBdelDttSPAgc\fP (\fBDTTSPAGC\fP a)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBdttspagc.h\fP.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef enum \fB_agcmode\fP  \fBAGCMODE\fP"
+.PP
+AGC mode 
+.SS "typedef struct \fB_dttspagc\fP * \fBDTTSPAGC\fP"
+.PP
+AGC control 
+.SS "typedef struct \fB_dttspagc\fP  \fBdttspagc\fP"
+.PP
+AGC control 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fB_agcmode\fP"
+.PP
+AGC mode 
+.PP
+\fBEnumerator: \fP
+.in +1c
+.TP
+\fB\fIagcOFF \fP\fP
+AGC off 
+.TP
+\fB\fIagcLONG \fP\fP
+AGC long 
+.TP
+\fB\fIagcSLOW \fP\fP
+AGC slow 
+.TP
+\fB\fIagcMED \fP\fP
+AGC medium 
+.TP
+\fB\fIagcFAST \fP\fP
+AGC fast 
+.PP
+Definition at line 48 of file dttspagc.h.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

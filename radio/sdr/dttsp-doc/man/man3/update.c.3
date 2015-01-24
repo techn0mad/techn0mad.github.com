@@ -1,0 +1,345 @@
+.TH "update.c" 3 "5 Apr 2007" "Version 93" "DttSp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+update.c \- Common defs and code for parm update. 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <common.h>\fP
+.br
+
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRL\fP   (\fBuni\fP->multirx.lis)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "PRIVATE \fBREAL\fP INLINE \fBdB2lin\fP (\fBREAL\fP dB)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXFilter\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXFilter\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetFilter\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetMode\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetOsc\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE void \fBreplay_updates\fP (void)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetBlkNR\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetBlkNRval\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetBlkANF\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetBlkANFval\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetNB\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetNBvals\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSDROM\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSDROMvals\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetBIN\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetfixedAGC\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXAGCCompression\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXALCAttack\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXALCDecay\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXALCHang\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXALCBot\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXLevelerAttack\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXLevelerSt\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXLevelerDecay\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXLevelerTop\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXLevelerHang\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXAGC\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXAGCAttack\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXAGCDecay\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXAGCHang\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXAGCSlope\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXAGCHangThreshold\fP (int h, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXAGCLimit\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXAGCTop\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXAGCFix\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXAGCFF\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXAGCFFCompression\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXAGCLimit\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXSpeechCompression\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXSpeechCompressionGain\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE \fBREAL\fP \fBgmean\fP (\fBREAL\fP x, \fBREAL\fP y)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetGrphRXEQ3\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetGrphRXEQ10\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetGrphTXEQ3\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetGrphTXEQ10\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetNotch160\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXCarrierLevel\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetANF\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetANFvals\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetNR\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetNRvals\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetcorrectIQ\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetcorrectIQphase\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetcorrectIQgain\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetcorrectTXIQ\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetcorrectTXIQphase\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetcorrectTXIQgain\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSquelch\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSquelchSt\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXSquelch\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXSquelchSt\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTRX\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRunState\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSpotToneVals\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSpotTone\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetFinished\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSWCH\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetMonDump\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRingBufferOffset\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRingBufferReset\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSNDSResetSize\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXListen\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXOn\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXOff\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXPan\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetRXGain\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetCompandSt\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetCompand\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetGrphTXEQcmd\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetGrphRXEQcmd\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXCompandSt\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetTXCompand\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSpectrumPolyphase\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSpectrumWindow\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetSpectrumType\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetDCBlockSt\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetDCBlock\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBsetNewBuflen\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBreqMeter\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBreqRXMeter\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBreqTXMeter\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBreqSpectrum\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "PRIVATE int \fBreqScope\fP (int n, char **p)"
+.br
+.ti -1c
+.RI "int \fBdo_update\fP (char *str, FILE *log)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBCTE\fP \fBupdate_cmds\fP []"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Common defs and code for parm update. 
+
+This file is part of a program that implements a Software-Defined Radio.
+.PP
+Copyright (C) 2004, 2005, 2006-5 by Frank Brickle, AB2KT and Bob McGwier, N4HY
+.PP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+.PP
+The authors can be reached by email at
+.PP
+\fBAuthor:\fP
+.RS 4
+ab2kt@arrl.net or 
+.PP
+rwmcgwier@comcast.net
+.RE
+.PP
+or by paper mail at
+.PP
+The DTTS Microwave Society 6 Kathleen Place Bridgewater, NJ 08807 
+.PP
+Definition in file \fBupdate.c\fP.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for DttSp from the source code.

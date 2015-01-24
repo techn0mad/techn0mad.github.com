@@ -1,0 +1,39 @@
+/*
+ * Combined style sheet for the index pages and the slide pages.
+ */
+
+body {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 14px;
+	
+	text-align:center;	
+	background-color: #fff;
+	background-image: url('../res/bg.jpg');
+	color: black;
+}
+
+
+h1 {
+	font-family: Trebuchet MS, Verdana, Arial, sans-serif;
+	font-weight: 100;
+}
+
+a {
+	color: #666;
+	text-decoration:none;
+}
+
+div.thumb {
+	font-size: 10px;
+}
+
+.thumbimage {
+	border: 4px solid #669966;
+}
+.image {
+	border: 12px solid #333;
+}
+
+.icon {
+	border: 0px;
+}

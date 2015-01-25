@@ -1,0 +1,14 @@
+<!--#config timefmt="%B %d, %Y %H:%M:%S"-->
+
+<table width="100%" cellpadding=0>
+
+<colgroup span=3 width="33%">
+</colgroup>
+
+<tr>
+<td align=left>Back to <a href="../index.shtml">Larry's Consulting Page</a>
+<td align=center>Up to <a href="../../sitemap.html">Site Map</a>
+<td align=right>Updated: <!--#echo var="LAST_MODIFIED"--> 
+
+</table>
+
